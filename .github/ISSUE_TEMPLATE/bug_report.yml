@@ -1,0 +1,56 @@
+name: Bug report
+description: Something does not work, crashes or looks wrong
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for testing Sheaf. A rough description is fine. **Please do not attach personal files or paste their contents.** Describe them instead.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What you did, what you expected and what Sheaf did instead.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: "1. Add a folder\n2. Let Sheaf read it\n3. Open Organise"
+  - type: input
+    id: version
+    attributes:
+      label: Sheaf version
+      placeholder: "0.1.0"
+    validations:
+      required: true
+  - type: input
+    id: mac
+    attributes:
+      label: Mac model and macOS version
+      placeholder: "MacBook Air M2, 8 GB, macOS 14.5"
+    validations:
+      required: true
+  - type: input
+    id: models
+    attributes:
+      label: Models in use
+      description: The output of `ollama list` is the quickest way to answer.
+      placeholder: "embeddinggemma, granite3.3:2b"
+  - type: dropdown
+    id: size
+    attributes:
+      label: Roughly how many files were in the folder?
+      options:
+        - Fewer than 50
+        - 50 to 500
+        - 500 to 5,000
+        - More than 5,000
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy
+      options:
+        - label: I have not included personal files or their contents.
+          required: true

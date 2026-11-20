@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sheaf: organise messy folders by what is inside the files</title>
+<meta name="description" content="Sheaf is a Mac app that reads your files with models that run locally, groups related ones and proposes a folder structure you approve and can undo. Free public beta.">
+<link rel="icon" href="img/icon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="betabar">Free early-user beta. Your feedback shapes what ships next. <a href="https://github.com/NegiAkash890/sheaf/issues/new/choose">Open an issue on GitHub</a></div>
+<header class="nav"><div class="wrap">
+  <a class="brand" href="./"><img src="img/icon.png" alt="">Sheaf <span class="tag">Beta</span></a>
+  <a href="#tour">The app</a><a href="#compare">Compare</a><a href="#how">How it works</a><a href="#tested">Tested</a><a href="#features">Features</a><a href="#beta">Beta status</a><a href="#download">Download</a><a href="docs.html">Docs</a><a href="privacy.html">Privacy</a>
+  <a class="keep" href="https://github.com/NegiAkash890/sheaf">GitHub</a>
+</div></header>
+
+<section class="hero first" style="border:0"><div class="wrap">
+  <h1>Your messy folders, sorted by what is inside the files.</h1>
+  <p class="sub">Sheaf is <mark class="hl">free to use</mark> with <mark class="hl">no charge</mark>, no subscription and no account. It runs on the Mac you already own and reads your files with AI that runs there too. You review every move and can undo all of it.</p>
+  <div class="actions">
+    <a class="btn primary" href="https://github.com/NegiAkash890/sheaf/releases/latest"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>Download for free</a>
+    <a class="btn secondary" href="https://github.com/NegiAkash890/sheaf"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>View on GitHub</a>
+  </div>
+  <div class="meta"><span>macOS 14+, Apple Silicon</span><span>Files never leave your Mac</span></div>
+  <figure class="figure">
+    <img class="shot" src="img/real-downloads.webp" alt="A macOS Finder window showing a Downloads folder of 73 items: installer packages, zip archives, PDFs and screenshots with default names" width="1600" height="750">
+    <figcaption>A real Downloads folder, 73 items deep. A few file names and the username are changed for privacy.</figcaption>
+  </figure>
+</div></section>
+
+<section id="tour" class="alt"><div class="wrap">
+  <h2>Inside the app</h2>
+  <p class="lead">Screenshots of the beta running on a sample folder of invented files, with local models on a MacBook Air M2.</p>
+  <div class="row">
+    <div class="txt"><h3>See what is in a folder</h3><p>Counts, file types and the largest collections at a glance, with a map of how the collections relate.</p></div>
+    <figure><img class="shot" src="img/overview.webp" alt="Sheaf overview screen with a map of collections, folder contents and largest collections" loading="lazy"></figure>
+  </div>
+  <div class="row flip">
+    <div class="txt"><h3>Collections found from content</h3><p>Related files are grouped and named by the local model. Open a collection to see why its files belong together.</p></div>
+    <figure><img class="shot" src="img/groups.webp" alt="Collections view with a selected file and its explanation" loading="lazy"></figure>
+  </div>
+  <div class="row">
+    <div class="txt"><h3>Review a plan, not a surprise</h3><p>Each collection becomes a real folder, shown whole with every file and its clearer name. Every move has a checkbox. Nothing happens until you approve, and History puts everything back.</p></div>
+    <figure><img class="shot" src="img/organise.webp" alt="Organise view showing a complete proposed folder with renamed files" loading="lazy"></figure>
+  </div>
+  <div class="row flip">
+    <div class="txt"><h3>Search by meaning</h3><p>Natural-language search that shows the reason for each match, including near misses.</p></div>
+    <figure><img class="shot" src="img/search.webp" alt="Search results for a question about a flight" loading="lazy"></figure>
+  </div>
+  <div class="row">
+    <div class="txt"><h3>See how files connect</h3><p>Explore the relationships Sheaf found. They are stored in a local database, separate from where files sit on disk.</p></div>
+    <figure><img class="shot" src="img/graph.webp" alt="Graph view with collections as bubbles" loading="lazy"></figure>
+  </div>
+</div></section>
+
+<section id="compare"><div class="wrap">
+  <h2>How Sheaf compares</h2>
+  <p class="lead">Each tool below is good at something different. This is where Sheaf fits, based on public information checked on 20 November 2026.</p>
+  <div class="tablewrap"><table class="cmp">
+    <thead><tr><th></th><th class="us">Sheaf</th><th>Finder</th><th>Hazel</th><th>Sparkle</th><th>DEVONthink</th></tr></thead>
+    <tbody>
+    <tr><th>Price</th><td class="us">Free</td><td>Included with macOS</td><td>Paid licence, free trial</td><td>Subscription after a free trial</td><td>From $99, one-time</td></tr>
+    <tr><th>How it sorts</th><td class="us">Groups files by what is inside them and proposes folders</td><td>You search, tag or set Smart Folder criteria</td><td>Rules you write</td><td>AI builds folders from file names</td><td>Learns from how you filed similar documents</td></tr>
+    <tr><th>Reads file contents</th><td class="us">Yes, on your Mac</td><td>Search only</td><td>Only if your rules match on contents</td><td>Per its published notes, file names only</td><td>Yes, inside its own databases</td></tr>
+    <tr><th>Where the AI runs</th><td class="us">Local models on your Mac</td><td>No AI sorting</td><td>No AI, rule-based</td><td>Cloud service</td><td>Optional: online providers or local models</td></tr>
+    <tr><th>Your files</th><td class="us">You approve a plan first, and can undo it</td><td>Smart Folders show matches without moving files</td><td>Acts automatically when a rule matches</td><td>Organises into folders it manages</td><td>Works from its own databases</td></tr>
+    </tbody>
+  </table></div>
+  <p class="lead" style="margin-top:28px;font-size:16px"><b>Pick another tool when</b> you want precise, ongoing rules (Hazel), a research library with annotation and sync (DEVONthink), or a hands-off cloud assistant (Sparkle). <b>Pick Sheaf when</b> you have a messy folder to sort once, you want the grouping decided by what the files say, and you want AI that stays on your Mac with a plan you approve.</p>
+  <p class="note">Details of other products change, so check each vendor. Sources: <a href="https://support.apple.com/guide/mac-help/mchle9f0a1b2/mac">Apple Support</a>, <a href="https://www.macstories.net/mac/hazel-5-makes-the-leap-from-system-preferences/">MacStories on Hazel</a>, <a href="https://every.to/p/introducing-sparkle">Every on Sparkle</a>, <a href="https://www.sourceforge.net/software/product/DEVONthink">DEVONthink listing</a>, <a href="https://tidbits.com/watchlist/devonthink-4-0-1/">TidBITS on DEVONthink 4</a>. Product names belong to their owners.</p>
+</div></section>
+
+<section id="own" class="alt"><div class="wrap">
+  <h2>Uses what you already own</h2>
+  <p class="lead">Many AI tools charge a subscription and process your files on their servers. Sheaf needs neither.</p>
+  <div class="cols3">
+    <div><span class="n">$0</span><b>No charge</b><p>No subscription, usage fees, ads or account. Core features will not move behind a paywall.</p></div>
+    <div><span class="n">Your Mac</span><b>No new hardware, no cloud bill</b><p>It runs on the Apple Silicon Mac you already have, with local models.</p></div>
+    <div><span class="n">Optional</span><b>Give back if it helps you</b><p>Nothing is required. A GitHub star, an honest bug report or a note on what grouped badly is how early users help most.</p></div>
+  </div>
+</div></section>
+
+<section id="how"><div class="wrap">
+  <h2>How it works</h2>
+  <p class="lead">There are no rules to write and no categories to choose. Sheaf works out the structure from what the files say.</p>
+  <div class="cols3">
+    <div><span class="n">01</span><b>Add a folder</b><p>Sheaf scans it read-only. Nothing in it is changed, moved or uploaded.</p></div>
+    <div><span class="n">02</span><b>Sheaf reads it</b><p>Small local models read text, PDFs, Word documents and text inside images, link files with similar meaning, and name each collection.</p></div>
+    <div><span class="n">03</span><b>You review the plan</b><p>Sheaf proposes folders and clearer file names with a reason for each move. Untick what you disagree with, apply the rest, undo with one click.</p></div>
+  </div>
+</div></section>
+
+<section id="tested" class="alt"><div class="wrap">
+  <h2>Tried and tested with open-source models</h2>
+  <p class="lead">Sheaf runs on open models you can swap. Seven model combinations were run end to end on the same 20-file sample folder, then checked against hand labels.</p>
+  <div class="stats">
+    <div><strong>5 + 3</strong><p>reasoning and embedding models benchmarked, in 7 combinations</p></div>
+    <div><strong>38 of 41</strong><p>plain-language searches returned the right file first, and all 41 had it in the top three</p></div>
+    <div><strong>0.1 s</strong><p>median search over a library of 10,000 files, 14,000 text chunks</p></div>
+    <div><strong>0.83</strong><p>grouping F1 for all seven combinations, 0.833 to 0.837 (1.0 is a perfect match)</p></div>
+  </div>
+  <div class="chips">
+    <p class="m">Reasoning models</p>
+    <span>granite3.3:2b</span><span>llama3.2:3b</span><span>phi3.5</span><span>phi4-mini</span><span>qwen3.5:4b</span>
+    <p class="m">Embedding models</p>
+    <span>embeddinggemma</span><span>nomic-embed-text</span><span>qwen3-embedding:0.6b</span>
+  </div>
+  <p class="note"><b>Hardware so far:</b> one Mac, a MacBook Air M2 with 8 GB, on macOS 26.4. Sheaf has not been run on other Macs or macOS versions yet, and the folders were small English-language samples. If you try it on another Mac, <a href="https://github.com/NegiAkash890/sheaf/issues/new/choose">tell us how it went</a>. Full results and caveats are on the <a href="benchmarks.html">benchmarks page</a>.</p>
+</div></section>
+
+<section id="features"><div class="wrap">
+  <h2>Built for files you care about</h2>
+  <p class="lead">Designed to run on an 8 GB MacBook Air, not a workstation.</p>
+  <dl class="facts">
+    <div><dt>Private by construction</dt><dd>All inference runs locally through Ollama. The only network connection Sheaf makes is to 127.0.0.1. No telemetry, no accounts.</dd></div>
+    <div><dt>Safe and reversible</dt><dd>No overwrites, nothing outside the folder you chose. Removed files go to the Trash. Moves run as one journaled transaction that rolls back on failure.</dd></div>
+    <div><dt>Light on resources</dt><dd>Only new and changed files are re-read, and collections keep their names as your library grows.</dd></div>
+  </dl>
+</div></section>
+
+<section id="beta" class="alt"><div class="wrap">
+  <h2>Beta status</h2>
+  <p class="lead">Sheaf works on real folders and is still being built. This is where it stands.</p>
+  <div class="status">
+    <div><h3>Working today</h3><ul>
+      <li>Read-only scan of a folder you choose</li>
+      <li>Local reading of text, PDFs, Word files and text in images</li>
+      <li>Collections found from content, with the reason shown</li>
+      <li>Search by meaning and a graph of how files connect</li>
+      <li>A reviewable plan, journaled moves and one-click undo</li>
+    </ul></div>
+    <div><h3>Known limitations</h3><ul>
+      <li>Tested on small and medium folders. Very large libraries are not yet proven</li>
+      <li>Not yet tried on other Macs or macOS versions</li>
+    </ul></div>
+    <div><h3>Planned</h3><ul>
+      <li>Large-library testing and speed work</li>
+      <li>Spreadsheet, presentation and email readers</li>
+      <li>Editable collection names and manual moves</li>
+      <li>Signed and notarised releases</li>
+    </ul></div>
+  </div>
+  <p class="note"><a href="roadmap.html">Full roadmap</a> &nbsp;/&nbsp; <a href="changelog.html">Changelog</a></p>
+</div></section>
+
+<section id="feedback"><div class="wrap">
+  <div class="feedback">
+    <div>
+      <h2>Report a bug or ask for a feature</h2>
+      <p>Issues on GitHub decide what gets fixed next. A rough description is fine.</p>
+      <div class="actions">
+        <a class="btn primary" href="https://github.com/NegiAkash890/sheaf/issues/new/choose">Open an issue</a>
+        <a class="btn secondary" href="https://github.com/NegiAkash890/sheaf/issues">Browse open issues</a>
+      </div>
+    </div>
+    <ul>
+      <li><b>What happened.</b> What you expected, and what Sheaf did.</li>
+      <li><b>Your setup.</b> Mac model, macOS version and the models you pulled in Ollama.</li>
+      <li><b>Keep files private.</b> Describe a file instead of attaching it. Please do not post personal documents.</li>
+    </ul>
+  </div>
+</div></section>
+
+<section id="requirements" class="alt"><div class="wrap">
+  <h2>Requirements</h2>
+  <p class="lead">Sheaf itself is small. The models are the part that needs space.</p>
+  <table>
+    <tr><th>Mac</th><td>Apple Silicon. Developed and tested on a MacBook Air M2 with 8 GB of memory.</td></tr>
+    <tr><th>macOS</th><td>14 Sonoma or later.</td></tr>
+    <tr><th>Model runner</th><td><a href="https://ollama.com">Ollama</a>, free and open source, running on your Mac.</td></tr>
+    <tr><th>Embedding model</th><td><code>embeddinggemma</code>, 621 MB (<code>nomic-embed-text</code> works too).</td></tr>
+    <tr><th>Reasoning model</th><td>One small model, about 1.5 GB: <code>granite3.3:2b</code> by default (Apache 2.0). <code>llama3.2:3b</code>, <code>phi3.5</code> and others also work.</td></tr>
+    <tr><th>Disk</th><td>About 2 GB for models. Sheaf stores its index in a small local database.</td></tr>
+    <tr><th>Speed</th><td>6 to 22 seconds per short document for first-time reading on an M2 Air, depending on system load. Later runs only read what changed.</td></tr>
+  </table>
+</div></section>
+
+<section id="download"><div class="wrap">
+  <h2>Download and install</h2>
+  <p class="lead">Direct download from GitHub Releases. Sheaf is not on the Mac App Store.</p>
+  <pre><code># 1. Download the DMG and its checksum from the Releases page, then verify:
+shasum -a 256 -c Sheaf-&lt;version&gt;-arm64.dmg.sha256
+
+# 2. Install Ollama (the free runner for the local models):
+brew install ollama     # or download it from ollama.com/download
+
+# 3. Open Sheaf. Setup starts Ollama if needed and downloads
+#    the two models (about 2 GB, once) with one click.</code></pre>
+  <p class="warn"><b>First launch:</b> beta releases are not signed with an Apple Developer ID and are not notarised, so macOS blocks the first launch. Open System Settings &rsaquo; Privacy &amp; Security and choose &ldquo;Open Anyway&rdquo; for Sheaf.</p>
+  <div class="actions"><a class="btn primary" href="https://github.com/NegiAkash890/sheaf/releases/latest"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>Download for free</a><a class="btn secondary" href="docs.html">Installation guide</a></div>
+</div></section>
+
+<section id="source" class="alt"><div class="wrap">
+  <h2>Source code</h2>
+  <p class="lead" style="margin-bottom:0">The source is private while the beta settles. When the Sheaf repository on GitHub reaches 100 stars, the source goes public. Until then, the <a href="privacy.html">privacy page</a> lists what you can check yourself.</p>
+</div></section>
+
+<footer><div class="wrap">
+  <a href="docs.html">Docs</a><a href="faq.html">FAQ</a><a href="privacy.html">Privacy</a><a href="changelog.html">Changelog</a><a href="roadmap.html">Roadmap</a><a href="https://github.com/NegiAkash890/sheaf">GitHub</a><a href="https://github.com/NegiAkash890/sheaf/issues">Report an issue</a>
+  <p>This site sets no cookies and has no sign-up.</p>
+</div></footer>
+</body>
+</html>

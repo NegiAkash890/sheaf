@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Documentation · Sheaf</title><link rel="stylesheet" href="style.css"></head><body>
+<div class="betabar">Free early-user beta. Your feedback shapes what ships next. <a href="https://github.com/NegiAkash890/sheaf/issues/new/choose">Open an issue on GitHub</a></div>
+<header class="nav"><div class="wrap"><a class="brand" href="./"><img src="img/icon.png" alt="">Sheaf <span class="tag">Beta</span></a><a href="docs.html">Docs</a><a href="faq.html">FAQ</a><a href="benchmarks.html">Benchmarks</a><a href="privacy.html">Privacy</a><a href="changelog.html">Changelog</a><a href="roadmap.html">Roadmap</a><a class="keep" href="https://github.com/NegiAkash890/sheaf">GitHub</a></div></header>
+<div class="wrap doc">
+<h1>Installing Sheaf</h1>
+<h2>1. Download and verify</h2>
+<p>Download <code>Sheaf-&lt;version&gt;-arm64.dmg</code> and its <code>.sha256</code> file from the Releases page, then check the download:</p>
+<pre>
+cd ~/Downloads
+shasum -a 256 -c Sheaf-&lt;version&gt;-arm64.dmg.sha256
+</pre>
+<p>It must print <code>OK</code>.</p>
+<h2>2. Install</h2>
+<p>Open the DMG and drag <b>Sheaf</b> to <b>Applications</b>.</p>
+<h2>3. First launch (important)</h2>
+<p>Sheaf releases are currently <b>not signed with an Apple Developer ID and not notarised</b>. macOS Gatekeeper therefore blocks the first launch. This is expected, and Sheaf does not ask you to switch Gatekeeper off.</p>
+<ul>
+<li>Open Sheaf once. macOS says it cannot be opened. Choose <b>Done</b>.</li>
+<li>Open <b>System Settings &gt; Privacy &amp; Security</b>, scroll to <b>Security</b>, and choose <b>Open Anyway</b> next to the Sheaf message. Confirm with your password.</li>
+</ul>
+<p>You only do this once per version. Check the download against the published SHA-256 checksum first (section 1 above), so you know it is the file that was released.</p>
+<h2>4. Set up the local AI</h2>
+<p>Sheaf uses <a href="https://ollama.com">Ollama</a>, a free model runner, to run the models on your Mac. Installing Ollama is the only step you do yourself:</p>
+<ul>
+<li>Install Ollama from <a href="https://ollama.com/download">ollama.com/download</a>, or in Terminal with <code>brew install ollama</code>.</li>
+<li>Open Sheaf. The first-launch setup finds Ollama on its own. If Ollama is installed but not running, choose <b>Start It</b>.</li>
+<li>Choose <b>Download Both</b>. Sheaf downloads the two models it needs (about 2 GB, once) and shows progress. They then work offline.</li>
+</ul>
+<p>Prefer Terminal? <code>ollama pull embeddinggemma</code> and <code>ollama pull granite3.3:2b</code> do the same thing. See <a href="docs.html#models">MODELS.md</a> for other model choices and licences.</p>
+<h2>5. Use it</h2>
+<p>Choose <b>Add Folder…</b> and let Sheaf read it. Look through <b>Collections</b> and <b>Graph</b>, then open <b>Organise</b> to see a proposed plan. Nothing moves until you choose <b>Move Files</b>, and <b>History &gt; Undo</b> puts everything back.</p>
+<p>macOS will ask for permission the first time Sheaf reads Desktop, Documents or Downloads.</p>
+<h2>Updating</h2>
+<p>Download the new DMG and replace the app. If a release enables in-app updates, <b>Sheaf &gt; Check for Updates…</b> offers them; updates are never installed without your say-so.</p>
+<h2>Uninstalling</h2>
+<p>Delete <code>Sheaf.app</code> and <code>~/Library/Application Support/Sheaf</code>. Your files are untouched. To remove the models: <code>ollama rm embeddinggemma nomic-embed-text granite3.3:2b</code>.</p>
+<span id="troubleshooting"></span>
+<h1>Troubleshooting</h1>
+<h2>macOS says Sheaf cannot be opened</h2>
+<p>Expected for unsigned builds. Open Sheaf once and choose <b>Done</b>. Then open <b>System Settings &gt; Privacy &amp; Security</b>, scroll to <b>Security</b>, choose <b>Open Anyway</b> next to the Sheaf message and confirm with your password. See <a href="docs.html">Installing Sheaf</a>.</p>
+<h2>Sheaf says Ollama is not running</h2>
+<p>Choose <b>Start Ollama</b> in Settings (or <b>Start It</b> in first-launch setup). If Ollama is not installed yet, get it from <a href="https://ollama.com/download">ollama.com/download</a>. In Terminal, this starts it as a background service:</p>
+<pre>
+brew services start ollama
+</pre>
+<p>To check that it answers, run <code>curl http://127.0.0.1:11434/api/tags</code>. It should print a list of installed models. Then choose <b>Check Again</b> in Sheaf.</p>
+<h2>A model is missing</h2>
+<p>Sheaf offers <b>Download Both</b> in setup and <b>Download</b> in Settings. If you would rather use Terminal, run these once and then choose <b>Check Again</b>:</p>
+<pre>
+ollama pull embeddinggemma
+ollama pull granite3.3:2b
+</pre>
+<p><code>ollama list</code> shows what is installed.</p>
+<h2>Sheaf cannot read my Desktop, Documents or Downloads</h2>
+<p>macOS asks for permission the first time. If you declined, choose <b>Open Privacy Settings</b> in Sheaf, or open <b>System Settings &gt; Privacy &amp; Security &gt; Files &amp; Folders</b> and allow Sheaf to access the folder.</p>
+<h2>Reading is slow</h2>
+<p>On an 8 GB Mac, first-time reading takes 6 to 22 seconds per short document, and longer when other apps are busy. Close memory-heavy apps, leave the Mac plugged in, and let the first run finish: later runs read only what changed. The reasoning model is released from memory three minutes after it was last used. You can press <b>Stop</b> at any time and continue later.</p>
+<h2>Collections look wrong</h2>
+<ul>
+<li>Untick any move you disagree with before applying a plan.</li>
+<li>Rename a collection, or drag a file into another one.</li>
+<li>Orange marks in Collections show files that may be in the wrong group.</li>
+<li>Changing the embedding model re-reads every file and can change the groups.</li>
+<li>Open a <b>Grouping or naming feedback</b> issue so the grouping can be improved. Describe the files instead of attaching them.</li>
+</ul>
+<h2>I want to undo a move</h2>
+<p>Open <b>History</b> and choose <b>Undo</b> for that change. Files you removed are in the Trash.</p>
+<h2>Start again from scratch</h2>
+<p>Use <b>Rescan Everything…</b> to read all files again. For a full reset, quit Sheaf and delete <code>~/Library/Application Support/Sheaf</code>. Your files are not affected.</p>
+<h2>What to include in a bug report</h2>
+<ul>
+<li>What you did, what you expected and what happened.</li>
+<li>The Sheaf version.</li>
+<li>Your Mac model and macOS version (<code>sw_vers</code> in Terminal).</li>
+<li>The models you use (<code>ollama list</code>).</li>
+<li>Roughly how many files were in the folder.</li>
+</ul>
+<p>Please do not attach personal files. Describe them instead. Open an issue from the <a href="https://github.com/NegiAkash890/sheaf/issues/new/choose">issue page</a>.</p>
+<span id="models"></span>
+<h1>Models</h1>
+<p>Sheaf needs two local models, served by Ollama on <code>127.0.0.1:11434</code>.</p>
+<table>
+<tr><td>Role</td><td>Default</td><td>Size</td><td>Licence</td><td>What it does</td></tr>
+<tr><td>Embeddings</td><td><code>embeddinggemma</code></td><td>621 MB</td><td>Gemma Terms of Use</td><td>Turns passages and search queries into 768-dimension vectors. <code>nomic-embed-text</code> (274 MB, Apache 2.0) can be chosen instead. Each model gets the prompt format it was trained with. Changing the model reads every file again.</td></tr>
+<tr><td>Reasoning</td><td><code>granite3.3:2b</code></td><td>1.5 GB</td><td>Apache-2.0</td><td>Summaries, document types, entities, group names, explanations, as JSON</td></tr>
+<tr><td>Reasoning (alternative)</td><td><code>phi3.5</code></td><td>2.2 GB</td><td>MIT</td><td>Same role, standard open-source licence</td></tr>
+</table>
+<p>Sheaf picks the first installed model from <code>granite3.3:2b</code>, <code>llama3.2:3b</code>, <code>phi3.5</code>, <code>phi4-mini</code>, <code>qwen2.5:3b</code>, <code>gemma3:4b</code>; change it under <b>Models</b>. Any Ollama chat model that supports structured (JSON schema) output should work.</p>
+<p>Sheaf does not ship model weights. You download them from the Ollama library and accept each model's licence yourself.</p>
+<h2>Memory on an 8 GB Mac</h2>
+<ul>
+<li>One file is processed at a time; nothing is batched across files.</li>
+<li>The reasoning model runs with a 4,096-token context and is released from memory three minutes after last use.</li>
+<li>Embedding and reasoning models are small enough to be loaded together (about 2.5 GB), leaving room for macOS and other apps.</li>
+<li>Vectors are stored as 32-bit floats in SQLite: about 3 KB per passage, at most 16 passages per file.</li>
+</ul>
+<p>Measured on a MacBook Air M2 (8 GB) with <code>llama3.2:3b</code>: 6 to 22 seconds per short text document for first-time understanding, depending on what else the Mac is doing (two runs of the same 20 files took 132 s and 433 s).</p>
+<h2>Changing models</h2>
+<p>Changing the reasoning model affects only files understood afterwards. Changing the embedding model re-reads everything, because vectors from different models cannot be compared.</p>
+</div></body></html>
