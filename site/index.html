@@ -19,7 +19,7 @@
 <div class="betabar">Free early-user beta. Your feedback shapes what ships next. <a href="https://github.com/NegiAkash890/sheaf/issues/new/choose">Open an issue on GitHub</a></div>
 <header class="nav"><div class="wrap">
   <a class="brand" href="./"><img src="img/icon.png" alt="">Sheaf <span class="tag">Beta</span></a>
-  <a href="#tour">The app</a><a href="#compare">Compare</a><a href="#requirements">Requirements</a><a href="#how">How it works</a><a href="https://github.com/NegiAkash890/sheaf/releases/latest">Download</a>
+  <a href="#tour">The app</a><a href="#compare">Compare</a><a href="#requirements">Requirements</a><a href="https://github.com/NegiAkash890/sheaf/releases/latest">Download</a>
   <a class="keep" href="https://github.com/NegiAkash890/sheaf">GitHub</a>
 </div></header>
 
@@ -129,16 +129,26 @@
 </div></section>
 <section class="alt" id="requirements"><div class="wrap">
   <h2>Requirements</h2>
-  <p class="lead">Sheaf itself is small. The models are the part that needs space.</p>
-  <div class="reqrow">
-    <div><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="7" width="10" height="10" rx="1.5"/><path d="M9 3v4M15 3v4M9 17v4M15 17v4M3 9h4M3 15h4M17 9h4M17 15h4"/></svg></span><span class="k">Mac</span><span class="v">Apple Silicon, M1 or later</span></div>
-    <div><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/></svg></span><span class="k">macOS</span><span class="v">14 Sonoma or later</span></div>
-    <div><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 17V7l7-4 7 4v10l-7 4z"/><path d="M5 7l7 4 7-4M12 11v10"/></svg></span><span class="k">Model runner</span><span class="v"><a href="https://ollama.com">Ollama</a>, free. Setup installs it</span></div>
-    <div><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg></span><span class="k">Download, once</span><span class="v">Bigger 2.4 GB or Light 1.6 GB, your choice</span></div>
-    <div><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span class="k">First read</span><span class="v">6 to 22 s per short document on an M2 Air. Later: only what changed</span></div>
-    <div><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 7.5-2"/></svg></span><span class="k">First open</span><span class="v">Unsigned beta: choose Open Anyway. <a href="docs.html">Install guide</a></span></div>
+  <p class="lead">Sheaf is a small app. The AI it runs on your Mac is the part that needs space, and it downloads once.</p>
+  <div class="reqsplit">
+    <div>
+      <h3>What you need</h3>
+      <ul class="checks">
+        <li><b>An Apple Silicon Mac</b><span>M1 or later. 8 GB of memory is enough.</span></li>
+        <li><b>macOS 14 Sonoma or later</b></li>
+        <li><b>Free disk space</b><span>2.4 GB for the Bigger AI, 1.6 GB for Light. You choose in setup and can switch later.</span></li>
+        <li><b>Internet, once</b><span>Only for the download. After that Sheaf works offline.</span></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Getting started</h3>
+      <ol class="steps">
+        <li><b>Download and open Sheaf.</b><span>It is an unsigned beta, so macOS asks you to confirm: right-click, choose Open, then Open Anyway. <a href="docs.html">Install guide</a></span></li>
+        <li><b>Run the one-time setup.</b><span>Pick Bigger or Light. Sheaf downloads the AI and installs what it needs.</span></li>
+        <li><b>Add a folder.</b><span>Or try the sample files first. Nothing moves until you approve a plan.</span></li>
+      </ol>
+    </div>
   </div>
-  <p class="note">Setup lets you choose Bigger (more specific collection names) or Light (smaller and quicker). You can switch in Settings any time.</p>
 </div></section>
 <section id="beta" ><div class="wrap">
   <h2>Beta status</h2>
@@ -180,15 +190,6 @@
       <li><b>Your setup.</b> Mac model, macOS version and whether you chose Bigger or Light.</li>
       <li><b>Keep files private.</b> Describe a file instead of attaching it. Please do not post personal documents.</li>
     </ul>
-  </div>
-</div></section>
-<section id="how"><div class="wrap">
-  <h2>How it works</h2>
-  <p class="lead">There are no rules to write and no categories to choose. Sheaf works out the structure from what the files say.</p>
-  <div class="cols3">
-    <div><span class="n">01</span><b>Add a folder</b><p>Sheaf scans it read-only. Nothing in it is changed, moved or uploaded.</p></div>
-    <div><span class="n">02</span><b>Sheaf reads it</b><p>Small local models read text, PDFs, Word documents and text inside images, link files with similar meaning, and name each collection.</p></div>
-    <div><span class="n">03</span><b>You review the plan</b><p>Sheaf proposes folders and clearer file names with a reason for each move. Untick what you disagree with, apply the rest, undo with one click.</p></div>
   </div>
 </div></section>
 <section id="source" class="srcband"><div class="wrap">

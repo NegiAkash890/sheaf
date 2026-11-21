@@ -221,3 +221,17 @@ section.srcband .big a { color:#fff; text-decoration:underline; text-underline-o
 /* app windows keep their own rounded corners (transparent PNG/WebP), so the shadow follows the window shape */
 .shot.win{border-radius:0;background:none;box-shadow:none;filter:drop-shadow(0 1px 2px rgba(20,30,25,.10)) drop-shadow(0 14px 28px rgba(20,30,25,.14))}
 .hero .shot.win{box-shadow:none;filter:drop-shadow(0 2px 4px rgba(20,30,25,.10)) drop-shadow(0 24px 40px rgba(20,30,25,.20)) drop-shadow(0 50px 70px rgba(20,30,25,.14))}
+
+/* requirements: what you need + getting started */
+.reqsplit { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+.reqsplit > div { background:#fff; border:1px solid var(--line); border-radius:12px; padding:26px 28px 14px; }
+.reqsplit h3 { font-size:16px; margin:0 0 6px; padding-bottom:12px; border-bottom:1px solid var(--line); }
+.reqsplit ul, .reqsplit ol { list-style:none; margin:0; padding:0; counter-reset:st; }
+.reqsplit li { position:relative; padding:14px 0 14px 38px; border-bottom:1px solid var(--line); display:flex; flex-direction:column; gap:3px; }
+.reqsplit li:last-child { border-bottom:0; }
+.reqsplit li b { font-size:16px; font-weight:600; letter-spacing:-.01em; }
+.reqsplit li span { font-size:15px; color:var(--muted); line-height:1.45; }
+.reqsplit .checks li::before { content:""; position:absolute; left:2px; top:17px; width:20px; height:20px; border-radius:50%; background:var(--sage, #dfe9e1) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23365f4c' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E") center/12px no-repeat; }
+.reqsplit .steps li { counter-increment:st; }
+.reqsplit .steps li::before { content:counter(st); position:absolute; left:2px; top:15px; width:22px; height:22px; border-radius:50%; background:var(--text); color:#fff; font:600 12px/22px var(--mono); text-align:center; }
+@media (max-width:860px) { .reqsplit { grid-template-columns:1fr; } }
