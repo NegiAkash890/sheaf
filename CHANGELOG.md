@@ -10,7 +10,7 @@
 - Plain-language filters: "pkg files", "pdfs from last week about rent", "screenshots over 5 MB".
 - Every file in a collection gets a fit score. Loose fits are marked; clear misfits are left out instead of forced in.
 - Collections recognise the kind of paper (CV, certificate, marksheet, ID, offer letter, receipt) and never use a person's name. Choose Broad or Detailed sorting in Settings.
-- Choose the size of the writing model in setup and in Settings: Bigger (Recommended, Granite 4.1 3B) or Light (Quicker, Granite 3.3 2B). The other size downloads on demand.
+- Choose the size of the writing model in setup and in Settings: Bigger (Recommended) or Light (Quicker). The other size downloads on demand.
 - Collections are grouped with the folders they sit in in mind, a folder of generated files stays one collection, and the kind of file decides names where it is clear (Resumes, Payslips, Screenshots).
 - Try every screen on a folder of invented sample files, with a step-by-step guide, while the models download.
 - As reading goes on, finished steps link straight to Search, the Graph and Collections.

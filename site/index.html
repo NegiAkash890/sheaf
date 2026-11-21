@@ -19,7 +19,7 @@
 <div class="betabar">Free early-user beta. Your feedback shapes what ships next. <a href="https://github.com/NegiAkash890/sheaf/issues/new/choose">Open an issue on GitHub</a></div>
 <header class="nav"><div class="wrap">
   <a class="brand" href="./"><img src="img/icon.png" alt="">Sheaf <span class="tag">Beta</span></a>
-  <a href="#how">How it works</a><a href="#tour">The app</a><a href="#compare">Compare</a><a href="#requirements">Requirements</a><a href="https://github.com/NegiAkash890/sheaf/releases/latest">Download</a>
+  <a href="#tour">The app</a><a href="#compare">Compare</a><a href="#requirements">Requirements</a><a href="#how">How it works</a><a href="https://github.com/NegiAkash890/sheaf/releases/latest">Download</a>
   <a class="keep" href="https://github.com/NegiAkash890/sheaf">GitHub</a>
 </div></header>
 
@@ -51,16 +51,7 @@
   })();
   </script>
 </div></section>
-<section id="how"><div class="wrap">
-  <h2>How it works</h2>
-  <p class="lead">There are no rules to write and no categories to choose. Sheaf works out the structure from what the files say.</p>
-  <div class="cols3">
-    <div><span class="n">01</span><b>Add a folder</b><p>Sheaf scans it read-only. Nothing in it is changed, moved or uploaded.</p></div>
-    <div><span class="n">02</span><b>Sheaf reads it</b><p>Small local models read text, PDFs, Word documents and text inside images, link files with similar meaning, and name each collection.</p></div>
-    <div><span class="n">03</span><b>You review the plan</b><p>Sheaf proposes folders and clearer file names with a reason for each move. Untick what you disagree with, apply the rest, undo with one click.</p></div>
-  </div>
-</div></section>
-<section id="tour" class="alt"><div class="wrap">
+<section class="alt" id="tour" ><div class="wrap">
   <h2>Inside the app</h2>
   <p class="lead">Screenshots of the beta running on the sample folder of invented files, with local models on a Mac.</p>
   <div class="row">
@@ -109,7 +100,7 @@
     <tbody>
     <tr><th>Price</th><td class="us">Free, no account</td><td>Free, built into macOS</td><td>Paid licence, free trial</td><td>Included with a paid Every subscription</td></tr>
     <tr><th>How it sorts</th><td class="us">Groups files by what is inside them and proposes folders</td><td>You make the folders and move files yourself</td><td>Rules you write</td><td>AI folders from file names</td></tr>
-    <tr><th>Where the AI runs</th><td class="us">Open models on your Mac, swappable</td><td>No AI sorting</td><td>No AI sorting</td><td>File names sent to a cloud model</td></tr>
+    <tr><th>Where the AI runs</th><td class="us">AI that runs on your Mac</td><td>No AI sorting</td><td>No AI sorting</td><td>File names sent to a cloud model</td></tr>
     <tr><th>Search</th><td class="us">Meaning, exact words, and people, places and things; opens the matching page</td><td>Spotlight: names and text</td><td>Not its focus</td><td>Not its focus</td></tr>
     <tr><th>Before files move</th><td class="us">You approve a plan; undo all of it</td><td>You move everything yourself</td><td>Acts as soon as a rule matches</td><td>Organises automatically</td></tr>
     <tr><th>Also</th><td class="us">Map of connections, fit score for every file, sample folder to try first</td><td>Tags and Smart Folders</td><td>Rename, convert, unarchive</td><td>Recents and AI Library folders</td></tr>
@@ -118,34 +109,7 @@
   <p class="lead" style="margin-top:28px;font-size:16px"><b>Pick Sheaf when</b> you have a messy folder, want it sorted by what the files say, want to find things by who, where or what, and want it free with AI that stays on your Mac.</p>
   <p class="note">Details of other products change, so check each vendor. Sources: <a href="https://www.noodlesoft.com/">Hazel</a>, <a href="https://every.to/p/introducing-sparkle">Every on Sparkle</a>. Product names belong to their owners.</p>
 </div></section>
-<section id="tested" class="alt"><div class="wrap">
-  <h2>Tested on real, messy folders</h2>
-  <p class="lead">Sheaf runs open-source AI models on your Mac. Before every release we run it on folders where we already know the right answer, so you are not the one who finds the mistakes.</p>
-  <div class="stats">
-    <div><strong>39 of 41</strong><p>everyday searches, like &ldquo;rent agreement&rdquo;, showed the right file first. All 41 had it in the top three.</p></div>
-    <div><strong>98%</strong><p>of the files Sheaf was sure about landed in the right collection. The ones it was unsure about are marked, not forced in.</p></div>
-    <div><strong>0.87</strong><p>out of 1 for how closely its collections matched a folder sorted by hand (64 tricky files). It was 0.65 before.</p></div>
-    <div><strong>0.1 s</strong><p>to search a library of 10,000 files, so it stays quick as your folders grow.</p></div>
-  </div>
-  <div class="cards3 tight">
-    <div><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></span><b>Find by describing</b><p>You do not need to remember a file&rsquo;s name.</p></div>
-    <div><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg></span><b>Files stay with their kind</b><p>A CV stays with CVs, an ID with IDs.</p></div>
-    <div><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></span><b>Made for an everyday Mac</b><p>No workstation, no cloud, no waiting on a server.</p></div>
-  </div>
-  <details class="plain">
-    <summary>For the curious: the models and the full results</summary>
-    <div class="chips">
-      <p class="m">Search</p>
-      <span>EmbeddingGemma 2 (270M)</span>
-      <p class="m">Writing: choose in setup or in Settings</p>
-      <span>Bigger (Recommended): Granite 4.1 3B</span><span>Light (Quicker): Granite 3.3 2B</span>
-      <p class="m">Also benchmarked</p>
-      <span>embeddinggemma</span><span>nomic-embed-text</span><span>qwen3-embedding:0.6b</span><span>llama3.2:3b</span><span>phi4-mini</span><span>qwen3.5:4b</span>
-    </div>
-    <p class="note"><b>Tested so far</b> on Apple Silicon with macOS 26, on English-language sample folders. If you try it on another Mac, <a href="https://github.com/NegiAkash890/sheaf/issues/new/choose">tell us how it went</a>. Every number and caveat is on the <a href="benchmarks.html">benchmarks page</a>.</p>
-  </details>
-</div></section>
-<section id="features"><div class="wrap">
+<section class="alt" id="features"><div class="wrap">
   <h2>Built for files you care about</h2>
   <p class="lead">Designed to run on an everyday Mac, not a workstation.</p>
   <div class="cards3">
@@ -154,7 +118,7 @@
     <div><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></span><b>Light on resources</b><p>Only new and changed files are read again.</p></div>
   </div>
 </div></section>
-<section id="own" class="alt"><div class="wrap">
+<section id="own" ><div class="wrap">
   <h2>Free, with nothing to buy</h2>
   <p class="lead">Many AI tools charge a subscription and process your files on their servers. Sheaf needs neither.</p>
   <div class="cols3">
@@ -163,7 +127,7 @@
     <div><span class="n">Optional</span><b>Give back if it helps you</b><p>Nothing is required. A GitHub star, an honest bug report or a note on what grouped badly is how early users help most.</p></div>
   </div>
 </div></section>
-<section id="requirements"><div class="wrap">
+<section class="alt" id="requirements"><div class="wrap">
   <h2>Requirements</h2>
   <p class="lead">Sheaf itself is small. The models are the part that needs space.</p>
   <div class="reqrow">
@@ -174,9 +138,9 @@
     <div><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span class="k">First read</span><span class="v">6 to 22 s per short document on an M2 Air. Later: only what changed</span></div>
     <div><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 7.5-2"/></svg></span><span class="k">First open</span><span class="v">Unsigned beta: choose Open Anyway. <a href="docs.html">Install guide</a></span></div>
   </div>
-  <p class="note">Search model: EmbeddingGemma 2, 303 MB. Writing model: Granite 4.1 3B (Bigger, 2.1 GB) or Granite 3.3 2B (Light, 1.25 GB), both Apache 2.0. Other Ollama models also work. You can switch in Settings any time.</p>
+  <p class="note">Setup lets you choose Bigger (more specific collection names) or Light (smaller and quicker). You can switch in Settings any time.</p>
 </div></section>
-<section id="beta" class="alt"><div class="wrap">
+<section id="beta" ><div class="wrap">
   <h2>Beta status</h2>
   <p class="lead">Sheaf works on real folders and is still being built. This is where it stands.</p>
   <div class="status">
@@ -201,7 +165,7 @@
   </div>
   <p class="note"><a href="roadmap.html">Full roadmap</a> &nbsp;/&nbsp; <a href="changelog.html">Changelog</a></p>
 </div></section>
-<section id="feedback"><div class="wrap">
+<section class="alt" id="feedback"><div class="wrap">
   <div class="feedback">
     <div>
       <h2>Report a bug or ask for a feature</h2>
@@ -213,9 +177,18 @@
     </div>
     <ul>
       <li><b>What happened.</b> What you expected, and what Sheaf did.</li>
-      <li><b>Your setup.</b> Mac model, macOS version and the models you pulled in Ollama.</li>
+      <li><b>Your setup.</b> Mac model, macOS version and whether you chose Bigger or Light.</li>
       <li><b>Keep files private.</b> Describe a file instead of attaching it. Please do not post personal documents.</li>
     </ul>
+  </div>
+</div></section>
+<section id="how"><div class="wrap">
+  <h2>How it works</h2>
+  <p class="lead">There are no rules to write and no categories to choose. Sheaf works out the structure from what the files say.</p>
+  <div class="cols3">
+    <div><span class="n">01</span><b>Add a folder</b><p>Sheaf scans it read-only. Nothing in it is changed, moved or uploaded.</p></div>
+    <div><span class="n">02</span><b>Sheaf reads it</b><p>Small local models read text, PDFs, Word documents and text inside images, link files with similar meaning, and name each collection.</p></div>
+    <div><span class="n">03</span><b>You review the plan</b><p>Sheaf proposes folders and clearer file names with a reason for each move. Untick what you disagree with, apply the rest, undo with one click.</p></div>
   </div>
 </div></section>
 <section id="source" class="srcband"><div class="wrap">
@@ -233,7 +206,7 @@
 </div></section>
 
 <footer><div class="wrap">
-  <a href="docs.html">Docs</a><a href="faq.html">FAQ</a><a href="benchmarks.html">Benchmarks</a><a href="#beta">Beta status</a><a href="privacy.html">Privacy</a><a href="changelog.html">Changelog</a><a href="roadmap.html">Roadmap</a><a href="https://github.com/NegiAkash890/sheaf">GitHub</a><a href="https://github.com/NegiAkash890/sheaf/issues">Report an issue</a>
+  <a href="docs.html">Docs</a><a href="faq.html">FAQ</a><a href="#beta">Beta status</a><a href="privacy.html">Privacy</a><a href="changelog.html">Changelog</a><a href="roadmap.html">Roadmap</a><a href="https://github.com/NegiAkash890/sheaf">GitHub</a><a href="https://github.com/NegiAkash890/sheaf/issues">Report an issue</a>
   <p>This site sets no cookies and has no sign-up.</p>
 </div></footer>
 </body>

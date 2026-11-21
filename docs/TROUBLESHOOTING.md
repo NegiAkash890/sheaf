@@ -14,10 +14,7 @@ To check that it answers, run `curl http://127.0.0.1:11434/api/tags`. It should 
 ## A model is missing
 Sheaf offers **Download Both** in setup and **Download** in Settings. If you would rather use Terminal, run these once and then choose **Check Again**:
 
-```
-ollama pull embeddinggemma-2:270m-q8_0-text
-ollama pull hf.co/ibm-granite/granite-3.3-2b-instruct-GGUF:Q3_K_M
-```
+Choose **Download** in Settings (or **Download Both** in setup) to fetch what is missing, then choose **Check Again**.
 `ollama list` shows what is installed.
 
 ## Sheaf cannot read my Desktop, Documents or Downloads

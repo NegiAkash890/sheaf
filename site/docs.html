@@ -2,7 +2,7 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Documentation · Sheaf</title><link rel="stylesheet" href="style.css"></head><body>
 <div class="betabar">Free early-user beta. Your feedback shapes what ships next. <a href="https://github.com/NegiAkash890/sheaf/issues/new/choose">Open an issue on GitHub</a></div>
-<header class="nav"><div class="wrap"><a class="brand" href="./"><img src="img/icon.png" alt="">Sheaf <span class="tag">Beta</span></a><a href="docs.html">Docs</a><a href="faq.html">FAQ</a><a href="benchmarks.html">Benchmarks</a><a class="keep" href="https://github.com/NegiAkash890/sheaf">GitHub</a></div></header>
+<header class="nav"><div class="wrap"><a class="brand" href="./"><img src="img/icon.png" alt="">Sheaf <span class="tag">Beta</span></a><a href="docs.html">Docs</a><a href="faq.html">FAQ</a><a class="keep" href="https://github.com/NegiAkash890/sheaf">GitHub</a></div></header>
 <div class="wrap doc">
 <h1>Installing Sheaf</h1>
 <h2>1. Download and verify</h2>
@@ -33,16 +33,15 @@ shasum -a 256 -c Sheaf-&lt;version&gt;-arm64.dmg.sha256
 <ul>
 <li>In Sheaf's setup, choose <b>Install Ollama</b>. Sheaf downloads it once (about 185 MB) from Ollama's official release page on GitHub, checks it against the checksum published there and against Ollama's developer signature, and keeps it in its own folder. This is the only time Sheaf uses the internet, apart from the model downloads Ollama does itself. If you would rather do it yourself, install Ollama from <a href="https://ollama.com/download">ollama.com/download</a> or with <code>brew install ollama</code>; Sheaf finds either one. Do this before the models step: the download needs Ollama running.</li>
 <li>Open Sheaf. The first-launch setup finds Ollama on its own. If Ollama is installed but not running, choose <b>Start It</b>.</li>
-<li>Pick the size of the writing model: <b>Bigger (Recommended)</b> is Granite 4.1 3B and gives more specific collection names (about 2.4 GB in all, once); <b>Light (Quicker)</b> is Granite 3.3 2B, smaller and faster (about 1.6 GB in all). Then choose <b>Set Up</b>. Sheaf downloads the models and shows progress. They then work offline. You can switch size any time in Settings.</li>
+<li>Pick the size of the writing AI: <b>Bigger (Recommended)</b> gives more specific collection names (about 2.4 GB in all, once); <b>Light (Quicker)</b> is smaller and faster (about 1.6 GB in all). Then choose <b>Set Up</b>. Sheaf downloads what it needs and shows progress. It then works offline. You can switch size any time in Settings.</li>
 </ul>
-<p>Prefer Terminal? <code>ollama pull embeddinggemma-2:270m-q8_0-text</code> and <code>ollama pull granite4.1:3b</code> (Bigger) or <code>ollama pull hf.co/ibm-granite/granite-3.3-2b-instruct-GGUF:Q3_K_M</code> (Light) do the same thing. See <a href="docs.html#models">MODELS.md</a> for other model choices and licences.</p>
 <h2>5. Use it</h2>
 <p>Choose <b>Add Folder…</b> and let Sheaf read it. Look through <b>Collections</b> and <b>Graph</b>, then open <b>Organise</b> to see a proposed plan. Nothing moves until you choose <b>Move Files</b>, and <b>History &gt; Undo</b> puts everything back.</p>
 <p>macOS will ask for permission the first time Sheaf reads Desktop, Documents or Downloads.</p>
 <h2>Updating</h2>
 <p>Download the new DMG and replace the app. If a release enables in-app updates, <b>Sheaf &gt; Check for Updates…</b> offers them; updates are never installed without your say-so.</p>
 <h2>Uninstalling</h2>
-<p>Delete <code>Sheaf.app</code> and <code>~/Library/Application Support/Sheaf</code> (this also removes the copy of Ollama that Install Ollama set up). Your files are untouched. The models live in <code>~/.ollama</code>: delete that folder to remove them, or run <code>ollama rm embeddinggemma-2:270m-q8_0-text hf.co/ibm-granite/granite-3.3-2b-instruct-GGUF:Q3_K_M</code> if you have the <code>ollama</code> command.</p>
+<p>Delete <code>Sheaf.app</code> and <code>~/Library/Application Support/Sheaf</code> (this also removes the copy of Ollama that Install Ollama set up). Your files are untouched. The downloaded AI lives in <code>~/.ollama</code>: delete that folder to remove it.</p>
 <span id="troubleshooting"></span>
 <h1>Troubleshooting</h1>
 <h2>macOS says Sheaf cannot be opened</h2>
@@ -53,13 +52,8 @@ shasum -a 256 -c Sheaf-&lt;version&gt;-arm64.dmg.sha256
 brew services start ollama
 </pre>
 <p>To check that it answers, run <code>curl http://127.0.0.1:11434/api/tags</code>. It should print a list of installed models. Then choose <b>Check Again</b> in Sheaf.</p>
-<h2>A model is missing</h2>
-<p>Sheaf offers <b>Download Both</b> in setup and <b>Download</b> in Settings. If you would rather use Terminal, run these once and then choose <b>Check Again</b>:</p>
-<pre>
-ollama pull embeddinggemma-2:270m-q8_0-text
-ollama pull hf.co/ibm-granite/granite-3.3-2b-instruct-GGUF:Q3_K_M
-</pre>
-<p><code>ollama list</code> shows what is installed.</p>
+<h2>The AI download is missing or incomplete</h2>
+<p>Sheaf offers <b>Download Both</b> in setup and <b>Download</b> in Settings. Check your connection, run it again, then choose <b>Check Again</b>.</p>
 <h2>Sheaf cannot read my Desktop, Documents or Downloads</h2>
 <p>macOS asks for permission the first time. If you declined, choose <b>Open Privacy Settings</b> in Sheaf, or open <b>System Settings &gt; Privacy &amp; Security &gt; Files &amp; Folders</b> and allow Sheaf to access the folder.</p>
 <h2>Reading is slow</h2>
@@ -81,35 +75,29 @@ ollama pull hf.co/ibm-granite/granite-3.3-2b-instruct-GGUF:Q3_K_M
 <li>What you did, what you expected and what happened.</li>
 <li>The Sheaf version.</li>
 <li>Your Mac model and macOS version (<code>sw_vers</code> in Terminal).</li>
-<li>The models you use (<code>ollama list</code>).</li>
+<li>Whether you chose Bigger or Light.</li>
 <li>Roughly how many files were in the folder.</li>
 </ul>
 <p>Please do not attach personal files. Describe them instead. Open an issue from the <a href="https://github.com/NegiAkash890/sheaf/issues/new/choose">issue page</a>.</p>
 <span id="models"></span>
-<h1>Models</h1>
-<p>Sheaf needs two local models, served by Ollama on <code>127.0.0.1:11434</code>.</p>
+<h1>The AI Sheaf uses</h1>
+<p>Sheaf runs two small AI models on your Mac, through a free model runner that setup installs for you. Nothing is sent anywhere.</p>
 <table>
-<tr><td>Role</td><td>Default</td><td>Size</td><td>Licence</td><td>What it does</td></tr>
-<tr><td>Embeddings</td><td><code>embeddinggemma-2:270m-q8_0-text</code> (EmbeddingGemma 2, text)</td><td>303 MB</td><td>Apache-2.0</td><td>Turns passages and search queries into 768-dimension vectors. <code>nomic-embed-text</code> (274 MB, Apache 2.0) can be chosen instead. Each model gets the prompt format it was trained with. Changing the model reads every file again.</td></tr>
-<tr><td>Writing, Bigger (Recommended)</td><td><code>granite4.1:3b</code> (Granite 4.1 3B)</td><td>2.1 GB</td><td>Apache-2.0</td><td>Summaries, document types, entities, group names, explanations, as JSON. More specific collection names; a little slower and uses more memory.</td></tr>
-<tr><td>Writing, Light (Quicker)</td><td><code>hf.co/ibm-granite/granite-3.3-2b-instruct-GGUF:Q3_K_M</code> (Granite 3.3 2B, compact Q3_K_M build)</td><td>1.25 GB</td><td>Apache-2.0</td><td>The same jobs with a smaller model. Collection names are more general.</td></tr>
-<tr><td>Reasoning (alternative)</td><td><code>phi3.5</code></td><td>2.2 GB</td><td>MIT</td><td>Same role, standard open-source licence</td></tr>
+<tr><td>Size</td><td>Download</td><td>What you get</td></tr>
+<tr><td>Bigger (Recommended)</td><td>about 2.4 GB, once</td><td>More specific collection names. A little slower and uses more memory.</td></tr>
+<tr><td>Light (Quicker)</td><td>about 1.6 GB, once</td><td>The same jobs with a smaller model. Collection names are more general.</td></tr>
 </table>
-<p>You choose Bigger or Light in setup and can switch in Settings, where the other size downloads on demand. If you have not chosen, Sheaf uses the first installed model from <code>granite4.1:3b</code>, <code>hf.co/ibm-granite/granite-3.3-2b-instruct-GGUF:Q3_K_M</code>, <code>granite3.3:2b</code>, <code>llama3.2:3b</code>, <code>phi3.5</code>, <code>phi4-mini</code>, <code>qwen2.5:3b</code>, <code>gemma3:4b</code>; change it under <b>Models</b>. Any Ollama chat model that supports structured (JSON schema) output should work.</p>
-<p>Sheaf does not ship model weights. You download them from the Ollama library and accept each model's licence yourself.</p>
+<p>You choose Bigger or Light in setup and can switch in Settings, where the other size downloads on demand. Sheaf does not ship the models; setup downloads them and you accept their licences.</p>
 <h2>Memory on smaller Macs</h2>
 <ul>
 <li>One file is processed at a time; nothing is batched across files.</li>
-<li>The reasoning model runs with a 4,096-token context and is released from memory three minutes after last use.</li>
-<li>Embedding and writing models are small enough to be loaded together (about 2.5 GB with Light, 3 GB with Bigger), leaving room for macOS and other apps.</li>
-<li>Vectors are stored as 32-bit floats in SQLite: about 3 KB per passage, at most 16 passages per file.</li>
+<li>The models are released from memory a few minutes after last use.</li>
+<li>Both models are small enough to be loaded together (about 2.5 GB with Light, 3 GB with Bigger), leaving room for macOS and other apps.</li>
 </ul>
-<p>Measured on an Apple Silicon Mac with <code>llama3.2:3b</code>: 6 to 22 seconds per short text document for first-time understanding, depending on what else the Mac is doing (two runs of the same 20 files took 132 s and 433 s).</p>
-<h2>Changing models</h2>
-<p>Changing the reasoning model affects only files understood afterwards. Changing the embedding model re-reads everything, because vectors from different models cannot be compared.</p>
+<p>Measured on an Apple Silicon Mac: 6 to 22 seconds per short text document for first-time understanding, depending on what else the Mac is doing. After that only new or changed files are read again.</p>
 </div>
 <footer><div class="wrap">
-  <a href="docs.html">Docs</a><a href="faq.html">FAQ</a><a href="benchmarks.html">Benchmarks</a><a href="privacy.html">Privacy</a><a href="changelog.html">Changelog</a><a href="roadmap.html">Roadmap</a><a href="https://github.com/NegiAkash890/sheaf">GitHub</a><a href="https://github.com/NegiAkash890/sheaf/issues">Report an issue</a>
+  <a href="docs.html">Docs</a><a href="faq.html">FAQ</a><a href="privacy.html">Privacy</a><a href="changelog.html">Changelog</a><a href="roadmap.html">Roadmap</a><a href="https://github.com/NegiAkash890/sheaf">GitHub</a><a href="https://github.com/NegiAkash890/sheaf/issues">Report an issue</a>
   <p>This site sets no cookies and has no sign-up.</p>
 </div></footer>
 </body></html>

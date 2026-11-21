@@ -49,8 +49,8 @@ Setup and Settings both let you choose the writing model, which names your colle
 
 ![Settings: Bigger (Recommended) and Light (Quicker)](screenshots/model-size.png)
 
-- **Bigger (Recommended):** Granite 4.1 3B, 2.1 GB. More specific collection names. A little slower and uses more memory.
-- **Light (Quicker):** Granite 3.3 2B, 1.25 GB. Smaller and faster. Collection names are more general.
+- **Bigger (Recommended):** about 2.1 GB. More specific collection names. A little slower and uses more memory.
+- **Light (Quicker):** about 1.25 GB. Smaller and faster. Collection names are more general.
 
 You can switch any time in Settings; the other size downloads when you pick it. Both are Apache-2.0 models from IBM. See [docs/MODELS.md](docs/MODELS.md).
 
