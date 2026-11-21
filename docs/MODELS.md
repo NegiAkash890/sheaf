@@ -4,11 +4,11 @@ Sheaf needs two local models, served by Ollama on `127.0.0.1:11434`.
 
 | Role | Default | Size | Licence | What it does |
 |---|---|---|---|---|
-| Embeddings | `embeddinggemma` | 621 MB | Gemma Terms of Use | Turns passages and search queries into 768-dimension vectors. `nomic-embed-text` (274 MB, Apache 2.0) can be chosen instead. Each model gets the prompt format it was trained with. Changing the model reads every file again. |
-| Reasoning | `granite3.3:2b` | 1.5 GB | Apache-2.0 | Summaries, document types, entities, group names, explanations, as JSON |
+| Embeddings | `embeddinggemma-2:270m-q8_0-text` (EmbeddingGemma 2, text) | 303 MB | Apache-2.0 | Turns passages and search queries into 768-dimension vectors. `nomic-embed-text` (274 MB, Apache 2.0) can be chosen instead. Each model gets the prompt format it was trained with. Changing the model reads every file again. |
+| Reasoning | `hf.co/ibm-granite/granite-3.3-2b-instruct-GGUF:Q3_K_M` (Granite 3.3 2B, compact Q3_K_M build) | 1.25 GB | Apache-2.0 | Summaries, document types, entities, group names, explanations, as JSON |
 | Reasoning (alternative) | `phi3.5` | 2.2 GB | MIT | Same role, standard open-source licence |
 
-Sheaf picks the first installed model from `granite3.3:2b`, `llama3.2:3b`, `phi3.5`, `phi4-mini`, `qwen2.5:3b`, `gemma3:4b`; change it under **Models**. Any Ollama chat model that supports structured (JSON schema) output should work.
+Sheaf picks the first installed model from `hf.co/ibm-granite/granite-3.3-2b-instruct-GGUF:Q3_K_M`, `granite3.3:2b`, `llama3.2:3b`, `phi3.5`, `phi4-mini`, `qwen2.5:3b`, `gemma3:4b`; change it under **Models**. Any Ollama chat model that supports structured (JSON schema) output should work.
 
 Sheaf does not ship model weights. You download them from the Ollama library and accept each model's licence yourself.
 

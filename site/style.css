@@ -131,3 +131,11 @@ table.cmp thead th.us{background:var(--accent);color:#fff}
 
 .chips{margin-top:26px}.chips .m{font-size:13px;color:var(--faint);margin:14px 0 8px;text-transform:uppercase;letter-spacing:.06em;font-weight:500}.chips .m:first-child{margin-top:0}
 .chips span{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:4px 13px;font:500 13px var(--mono);margin:0 8px 8px 0;background:#fff;color:var(--text)}
+
+/* "And everything around it": a grid of small feature cards. */
+.grid4 { display:grid; grid-template-columns:repeat(4,1fr); gap:28px 32px; }
+.grid4 > div { border-top:1px solid var(--line); padding-top:14px; }
+.grid4 b { display:block; font-size:16px; font-weight:600; margin-bottom:6px; letter-spacing:-.01em; }
+.grid4 p { margin:0; color:var(--muted); font-size:15px; line-height:1.5; }
+@media (max-width: 960px) { .grid4 { grid-template-columns:repeat(2,1fr); } }
+@media (max-width: 560px) { .grid4 { grid-template-columns:1fr; } }

@@ -7,8 +7,26 @@
 <h1>Changelog</h1>
 <p>All notable changes are recorded here. Format follows Keep a Changelog; versions follow SemVer.</p>
 <h2>[0.1.1] - unreleased</h2>
+<h3>Added</h3>
+<ul>
+<li>Search by people, places, things and ideas found inside your files, with the collection a result belongs to shown above the results.</li>
+<li>Hybrid search: meaning and exact words together, file names that contain every word typed rank high, PDF results open on the matching page.</li>
+<li>Plain-language filters ("pkg files", "pdfs from last week about rent"), read without a model.</li>
+<li>A fit score for every file in a collection, from how it links to the rest (no model). Loose fits are marked; clear misfits are left out.</li>
+<li>Collections recognise the kind of paper (CV, certificate, marksheet, ID, offer letter, receipt), so a CV is not grouped with the certificates it lists. Broad or Detailed sorting in Settings.</li>
+<li>Collection names never use a person's name.</li>
+<li>A sample folder of invented files ships with Sheaf: try every screen, with a step-by-step guide, while the models download.</li>
+<li>The progress card links each finished step to its screen (Search, Graph, Collections) as reading carries on.</li>
+<li>Highlight one kind of file in Collections and the Graph; quick panel from any app; Overview with people, places, things and ideas.</li>
+<li>Report a Problem: a GitHub issue filled in for you to read and send, with paths blanked out.</li>
+<li>Collection edits are kept in History and can be undone with Command-Z after the note has gone.</li>
+</ul>
 <h3>Changed</h3>
 <ul>
+<li>Default models: EmbeddingGemma 2 (270M) for search, Granite 3.3 2B (compact build) for naming. About 1.6 GB in total.</li>
+<li>Search: 39 of 41 test questions answer first time (was 38), all in the top three.</li>
+<li>Grouping F1 on the 64-file test folder: 0.83 (was 0.65).</li>
+<li>Organise scrolls smoothly with hundreds of planned moves.</li>
 <li>New name: Sheaf. The app, command-line tool (<code>sheaf-cli</code>), bundle identifier, website and documentation all use the new name.</li>
 <li>On first launch Sheaf copies a library made by an earlier version (in Application Support) into its own folder and leaves the old one untouched.</li>
 <li>Environment variables now begin <code>SHEAF_</code>.</li>

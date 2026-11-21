@@ -24,7 +24,7 @@ Requires Apple Silicon and macOS 14 or later, plus [Ollama](https://ollama.com) 
 1. Download the DMG and its `.sha256` file from [Releases](../../releases/latest). Check it: `shasum -a 256 -c Sheaf-<version>-arm64.dmg.sha256`
 2. Drag Sheaf to Applications.
 3. The app is **not signed or notarised yet**, so macOS blocks the first launch. Open System Settings > Privacy & Security and choose **Open Anyway**. Details in [docs/INSTALL.md](docs/INSTALL.md).
-4. Install [Ollama](https://ollama.com/download) (or `brew install ollama`). When you open Sheaf, setup finds it, starts it if needed and downloads both models (about 2 GB, once) with one click.
+4. Open Sheaf. Setup installs [Ollama](https://ollama.com) if you do not have it, starts it, and downloads both models (about 1.6 GB, once) with one click. While they download, you can try every screen on a folder of sample files.
 
 ## Privacy
 

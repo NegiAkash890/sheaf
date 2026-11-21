@@ -8,7 +8,7 @@
 <p>Sheaf is built so that there is nothing to collect.</p>
 <ul>
 <li><b>Your files stay on your Mac.</b> Reading, embedding, summarising, searching and organising all happen locally. File contents, names and metadata are never sent anywhere.</li>
-<li><b>Network use.</b> Sheaf connects only to the model server on your own machine (<code>127.0.0.1:11434</code>). When you choose to download a model, Sheaf asks that local server (Ollama) to fetch it, and Ollama downloads it from its own model library; nothing about your files is part of that request. If a release has in-app updates enabled and you choose to check for updates, it fetches the update feed from the project's release hosting; no identifying information is added.</li>
+<li><b>Network use.</b> Sheaf connects only to the model server on your own machine (<code>127.0.0.1:11434</code>), with one exception that you start yourself: if you choose <b>Install Ollama</b> in setup, Sheaf downloads Ollama once from its official release page on GitHub (<code>github.com/ollama/ollama</code>), checks it against the checksum published there, and keeps it in its own folder. Nothing about you or your files is part of that request. When you choose to download a model, Sheaf asks that local server (Ollama) to fetch it, and Ollama downloads it from its own model library; nothing about your files is part of that request. If a release has in-app updates enabled and you choose to check for updates, it fetches the update feed from the project's release hosting; no identifying information is added.</li>
 <li><b>No telemetry, analytics, crash reporting, accounts, advertising or tracking.</b> There is no server operated by the Sheaf project.</li>
 <li><b>What is stored.</b> A SQLite database in <code>~/Library/Application Support/Sheaf</code> holds file paths, extracted text passages, summaries, vectors, relationships, plans and the change journal. Delete that folder to remove it all.</li>
 <li><b>The website</b> is static, sets no cookies and has no sign-up.</li>
@@ -16,13 +16,13 @@
 <p>Ollama and the models you install are separate software with their own policies.</p>
 <span id="verify"></span>
 <h1>Verifying the privacy claims</h1>
-<p>Sheaf says that your files never leave your Mac and that its only network traffic is to the model server on your own machine. You do not have to take that on trust. Here are three ways to check.</p>
+<p>Sheaf says that your files never leave your Mac and that its only network traffic is to the model server on your own machine, apart from the one-time Ollama download you can choose in setup. You do not have to take that on trust. Here are three ways to check.</p>
 <h2>1. Look at Sheaf's network connections</h2>
 <p>Open Sheaf and start it reading a folder. In Terminal run:</p>
 <pre>
 lsof -nP -i | grep -i sheaf
 </pre>
-<p>You should see connections only to <code>127.0.0.1</code> (port <code>11434</code>, the Ollama server on your Mac). Any other address would be a problem; if you see one, please open an issue.</p>
+<p>You should see connections only to <code>127.0.0.1</code> (port <code>11434</code>, the Ollama server on your Mac). Any other address would be a problem; if you see one, please open an issue. The one expected exception is <code>github.com</code>, only while or just after you choose <b>Install Ollama</b> in setup.</p>
 <h2>2. Block everything but your own machine</h2>
 <p>Use a firewall such as <a href="https://objective-see.org/products/lulu.html">LuLu</a> (free) or Little Snitch. Deny Sheaf all connections except to <code>127.0.0.1</code>. Sheaf should keep working normally.</p>
 <h2>3. Go offline</h2>
@@ -31,6 +31,7 @@ lsof -nP -i | grep -i sheaf
 <ul>
 <li>Ollama and the models are separate software with their own behaviour and policies. Ollama contacts its own library when you download a model.</li>
 <li>Downloading Ollama, a model or a Sheaf release needs a connection by nature.</li>
+<li><b>Install Ollama</b> in setup downloads Ollama (about 185 MB) from <code>github.com/ollama/ollama</code> once, after you click it. Sheaf checks it against the SHA-256 checksum published with the release, which catches a damaged download, and checks that it is signed with Ollama's Apple developer ID (team <code>3MU9H2V9Y9</code>), which shows it really is from Ollama. If you would rather not use it, install Ollama yourself (ollama.com or <code>brew install ollama</code>) and Sheaf will use that.</li>
 <li>If a release enables in-app updates and you choose to check for updates, Sheaf fetches the update feed from the project's release hosting. No identifying information is added.</li>
 </ul>
 <p>See the <a href="privacy.html">privacy policy</a>.</p>
