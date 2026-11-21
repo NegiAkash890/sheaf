@@ -8,6 +8,7 @@
 
 - **Local only.** No account, no cloud, no telemetry. The only network connection is to the model server on your own Mac.
 - **Never moves anything without your approval.** Every change is journaled and can be undone.
+- **Knows what kind of file it is.** A CV, a job description, an ID card, a photo of you, a trip photo, a licence file: each stays with its own kind.
 - **Explains itself.** Every relationship, collection and proposed move comes with the reason.
 - **Free.** No subscription, no ads.
 
@@ -19,12 +20,12 @@
 
 ## Install
 
-Requires Apple Silicon and macOS 14 or later, plus [Ollama](https://ollama.com) for the local models (about 2.5 GB, one time).
+Requires Apple Silicon and macOS 14 or later. Setup fetches [Ollama](https://ollama.com) and two small open models, about 1.6 GB once.
 
 1. Download the DMG and its `.sha256` file from [Releases](../../releases/latest). Check it: `shasum -a 256 -c Sheaf-<version>-arm64.dmg.sha256`
 2. Drag Sheaf to Applications.
 3. The app is **not signed or notarised yet**, so macOS blocks the first launch. Open System Settings > Privacy & Security and choose **Open Anyway**. Details in [docs/INSTALL.md](docs/INSTALL.md).
-4. Open Sheaf. Setup installs [Ollama](https://ollama.com) if you do not have it, starts it, and downloads both models (about 1.6 GB, once) with one click. While they download, you can try every screen on a folder of sample files.
+4. Open Sheaf and pick a folder. Setup installs Ollama if needed and downloads the models. Reading starts as soon as the search model is in; collections are named when the writing model arrives. Meanwhile you can try every screen on sample files.
 
 ## Privacy
 
