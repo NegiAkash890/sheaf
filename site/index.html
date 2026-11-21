@@ -32,7 +32,7 @@
 
 <section id="tour" class="alt"><div class="wrap">
   <h2>Inside the app</h2>
-  <p class="lead">Screenshots of the beta running on the sample folder of invented files, with local models on a MacBook Air M2.</p>
+  <p class="lead">Screenshots of the beta running on the sample folder of invented files, with local models on a Mac.</p>
   <div class="row">
     <div class="txt"><h3>Your folder, summed up</h3><p>How many files, how many collections, and every person, place, thing and idea Sheaf found inside them. Click any name to see every file it appears in.</p></div>
     <figure><img class="shot" src="img/overview.webp" alt="Sheaf Overview: 64 messy files, 6 tidy collections, with the people, places, things and ideas found in the files" loading="lazy"></figure>
@@ -127,12 +127,12 @@
     <p class="m">Also benchmarked</p>
     <span>embeddinggemma</span><span>nomic-embed-text</span><span>qwen3-embedding:0.6b</span><span>llama3.2:3b</span><span>phi4-mini</span><span>qwen3.5:4b</span>
   </div>
-  <p class="note"><b>Hardware so far:</b> one Mac, a MacBook Air M2 with 8 GB, on macOS 26.4. The test folders are English-language samples. If you try it on another Mac, <a href="https://github.com/NegiAkash890/sheaf/issues/new/choose">tell us how it went</a>. Full results and caveats are on the <a href="benchmarks.html">benchmarks page</a>.</p>
+  <p class="note"><b>Tested so far</b> on Apple Silicon with macOS 26. The test folders are English-language samples. If you try it on another Mac, <a href="https://github.com/NegiAkash890/sheaf/issues/new/choose">tell us how it went</a>. Full results and caveats are on the <a href="benchmarks.html">benchmarks page</a>.</p>
 </div></section>
 
 <section id="features" class="alt"><div class="wrap">
   <h2>Built for files you care about</h2>
-  <p class="lead">Designed to run on an 8 GB MacBook Air, not a workstation.</p>
+  <p class="lead">Designed to run on an everyday Mac, not a workstation.</p>
   <dl class="facts">
     <div><dt>Private by construction</dt><dd>All inference runs locally through Ollama. Sheaf talks only to 127.0.0.1, apart from a one-time Ollama download if you choose it in setup. No telemetry, no accounts.</dd></div>
     <div><dt>Safe and reversible</dt><dd>No overwrites, nothing outside the folder you chose. Removed files go to the Trash. Moves run as one journaled transaction that rolls back on failure.</dd></div>
@@ -188,7 +188,7 @@
   <h2>Requirements</h2>
   <p class="lead">Sheaf itself is small. The models are the part that needs space.</p>
   <table>
-    <tr><th>Mac</th><td>Apple Silicon. Developed and tested on a MacBook Air M2 with 8 GB of memory.</td></tr>
+    <tr><th>Mac</th><td>Apple Silicon (M1 or later).</td></tr>
     <tr><th>macOS</th><td>14 Sonoma or later.</td></tr>
     <tr><th>Model runner</th><td><a href="https://ollama.com">Ollama</a>, free and open source, running on your Mac. Setup installs it if you do not have it.</td></tr>
     <tr><th>Search model</th><td>EmbeddingGemma 2, 303 MB (Apache 2.0).</td></tr>

@@ -24,7 +24,7 @@ ollama pull hf.co/ibm-granite/granite-3.3-2b-instruct-GGUF:Q3_K_M
 macOS asks for permission the first time. If you declined, choose **Open Privacy Settings** in Sheaf, or open **System Settings > Privacy & Security > Files & Folders** and allow Sheaf to access the folder.
 
 ## Reading is slow
-On an 8 GB Mac, first-time reading takes 6 to 22 seconds per short document, and longer when other apps are busy. Close memory-heavy apps, leave the Mac plugged in, and let the first run finish: later runs read only what changed. The reasoning model is released from memory three minutes after it was last used. You can press **Stop** at any time and continue later.
+On a Mac with less memory, first-time reading takes 6 to 22 seconds per short document, and longer when other apps are busy. Close memory-heavy apps, leave the Mac plugged in, and let the first run finish: later runs read only what changed. The reasoning model is released from memory three minutes after it was last used. You can press **Stop** at any time and continue later.
 
 ## Collections look wrong
 - Untick any move you disagree with before applying a plan.

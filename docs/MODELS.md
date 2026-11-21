@@ -12,13 +12,13 @@ Sheaf picks the first installed model from `hf.co/ibm-granite/granite-3.3-2b-ins
 
 Sheaf does not ship model weights. You download them from the Ollama library and accept each model's licence yourself.
 
-## Memory on an 8 GB Mac
+## Memory on smaller Macs
 - One file is processed at a time; nothing is batched across files.
 - The reasoning model runs with a 4,096-token context and is released from memory three minutes after last use.
 - Embedding and reasoning models are small enough to be loaded together (about 2.5 GB), leaving room for macOS and other apps.
 - Vectors are stored as 32-bit floats in SQLite: about 3 KB per passage, at most 16 passages per file.
 
-Measured on a MacBook Air M2 (8 GB) with `llama3.2:3b`: 6 to 22 seconds per short text document for first-time understanding, depending on what else the Mac is doing (two runs of the same 20 files took 132 s and 433 s).
+Measured on an Apple Silicon Mac with `llama3.2:3b`: 6 to 22 seconds per short text document for first-time understanding, depending on what else the Mac is doing (two runs of the same 20 files took 132 s and 433 s).
 
 ## Changing models
 Changing the reasoning model affects only files understood afterwards. Changing the embedding model re-reads everything, because vectors from different models cannot be compared.

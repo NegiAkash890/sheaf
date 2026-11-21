@@ -63,7 +63,7 @@ ollama pull hf.co/ibm-granite/granite-3.3-2b-instruct-GGUF:Q3_K_M
 <h2>Sheaf cannot read my Desktop, Documents or Downloads</h2>
 <p>macOS asks for permission the first time. If you declined, choose <b>Open Privacy Settings</b> in Sheaf, or open <b>System Settings &gt; Privacy &amp; Security &gt; Files &amp; Folders</b> and allow Sheaf to access the folder.</p>
 <h2>Reading is slow</h2>
-<p>On an 8 GB Mac, first-time reading takes 6 to 22 seconds per short document, and longer when other apps are busy. Close memory-heavy apps, leave the Mac plugged in, and let the first run finish: later runs read only what changed. The reasoning model is released from memory three minutes after it was last used. You can press <b>Stop</b> at any time and continue later.</p>
+<p>On a Mac with less memory, first-time reading takes 6 to 22 seconds per short document, and longer when other apps are busy. Close memory-heavy apps, leave the Mac plugged in, and let the first run finish: later runs read only what changed. The reasoning model is released from memory three minutes after it was last used. You can press <b>Stop</b> at any time and continue later.</p>
 <h2>Collections look wrong</h2>
 <ul>
 <li>Untick any move you disagree with before applying a plan.</li>
@@ -96,14 +96,14 @@ ollama pull hf.co/ibm-granite/granite-3.3-2b-instruct-GGUF:Q3_K_M
 </table>
 <p>Sheaf picks the first installed model from <code>hf.co/ibm-granite/granite-3.3-2b-instruct-GGUF:Q3_K_M</code>, <code>granite3.3:2b</code>, <code>llama3.2:3b</code>, <code>phi3.5</code>, <code>phi4-mini</code>, <code>qwen2.5:3b</code>, <code>gemma3:4b</code>; change it under <b>Models</b>. Any Ollama chat model that supports structured (JSON schema) output should work.</p>
 <p>Sheaf does not ship model weights. You download them from the Ollama library and accept each model's licence yourself.</p>
-<h2>Memory on an 8 GB Mac</h2>
+<h2>Memory on smaller Macs</h2>
 <ul>
 <li>One file is processed at a time; nothing is batched across files.</li>
 <li>The reasoning model runs with a 4,096-token context and is released from memory three minutes after last use.</li>
 <li>Embedding and reasoning models are small enough to be loaded together (about 2.5 GB), leaving room for macOS and other apps.</li>
 <li>Vectors are stored as 32-bit floats in SQLite: about 3 KB per passage, at most 16 passages per file.</li>
 </ul>
-<p>Measured on a MacBook Air M2 (8 GB) with <code>llama3.2:3b</code>: 6 to 22 seconds per short text document for first-time understanding, depending on what else the Mac is doing (two runs of the same 20 files took 132 s and 433 s).</p>
+<p>Measured on an Apple Silicon Mac with <code>llama3.2:3b</code>: 6 to 22 seconds per short text document for first-time understanding, depending on what else the Mac is doing (two runs of the same 20 files took 132 s and 433 s).</p>
 <h2>Changing models</h2>
 <p>Changing the reasoning model affects only files understood afterwards. Changing the embedding model re-reads everything, because vectors from different models cannot be compared.</p>
 </div>

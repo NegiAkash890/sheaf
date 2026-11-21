@@ -13,7 +13,7 @@ No. Sheaf first reads a folder without changing anything. It then proposes a pla
 Text files, PDFs, Word documents and text inside images. Files with nothing readable inside are still placed using their names and details, and Sheaf marks them so you know it saw only the name. Spreadsheet, presentation and email readers are on the [roadmap](../ROADMAP.md).
 
 ## How big a folder can it handle?
-It has been tested on folders of tens to a few hundred files. Larger libraries are on the roadmap for testing and are not yet proven. On an 8 GB MacBook Air M2, first-time reading takes between 6 and 22 seconds per short document, depending on what else the Mac is doing. Later runs only read new and changed files.
+It has been tested on folders of tens to a few hundred files. Larger libraries are on the roadmap for testing and are not yet proven. On an everyday Apple Silicon Mac, first-time reading takes between 6 and 22 seconds per short document, depending on what else the Mac is doing. Later runs only read new and changed files.
 
 ## Why do I need Ollama?
 Sheaf does not ship model weights. [Ollama](https://ollama.com) is a free, open-source program that runs the models on your Mac. A built-in runtime that removes this requirement is planned. See [Models](MODELS.md) for sizes and licences.
