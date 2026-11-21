@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Changelog · Sheaf</title><link rel="stylesheet" href="style.css"></head><body>
+<div class="betabar">Free early-user beta. Your feedback shapes what ships next. <a href="https://github.com/NegiAkash890/sheaf/issues/new/choose">Open an issue on GitHub</a></div>
+<header class="nav"><div class="wrap"><a class="brand" href="./"><img src="img/icon.png" alt="">Sheaf <span class="tag">Beta</span></a><a href="docs.html">Docs</a><a href="faq.html">FAQ</a><a href="benchmarks.html">Benchmarks</a><a class="keep" href="https://github.com/NegiAkash890/sheaf">GitHub</a></div></header>
+<div class="wrap doc">
+<h1>Changelog</h1>
+<p>All notable changes are recorded here. Format follows Keep a Changelog; versions follow SemVer.</p>
+<h2>[0.1.1] - unreleased</h2>
+<h3>Added</h3>
+<ul>
+<li>Search by people, places, things and ideas found inside your files, with the collection a result belongs to shown above the results.</li>
+<li>Hybrid search: meaning and exact words together, file names that contain every word typed rank high, PDF results open on the matching page.</li>
+<li>Plain-language filters ("pkg files", "pdfs from last week about rent"), read without a model.</li>
+<li>A fit score for every file in a collection, from how it links to the rest (no model). Loose fits are marked; clear misfits are left out.</li>
+<li>Collections recognise the kind of paper (CV, certificate, marksheet, ID, offer letter, receipt), so a CV is not grouped with the certificates it lists. Broad or Detailed sorting in Settings.</li>
+<li>Collection names never use a person's name.</li>
+<li>Choose the size of the writing model in setup and in Settings: Bigger (Recommended, Granite 4.1 3B) or Light (Quicker, Granite 3.3 2B). The other size downloads on demand.</li>
+<li>Collections are grouped with the folders they sit in in mind, a folder of generated files stays one collection, and the kind of file decides names where it is clear (Resumes, Payslips, Screenshots).</li>
+<li>A sample folder of invented files ships with Sheaf: try every screen, with a step-by-step guide, while the models download.</li>
+<li>The progress card links each finished step to its screen (Search, Graph, Collections) as reading carries on.</li>
+<li>Highlight one kind of file in Collections and the Graph; quick panel from any app; Overview with people, places, things and ideas.</li>
+<li>Report a Problem: a GitHub issue filled in for you to read and send, with paths blanked out.</li>
+<li>Collection edits are kept in History and can be undone with Command-Z after the note has gone.</li>
+</ul>
+<h3>Changed</h3>
+<ul>
+<li>Default models: EmbeddingGemma 2 (270M) for search, Granite 3.3 2B (compact build) for naming. About 1.6 GB in total.</li>
+<li>Search: 39 of 41 test questions answer first time (was 38), all in the top three.</li>
+<li>Grouping F1 on the 64-file test folder: 0.72 with Broad collections (the default) and 0.85 with Detailed (was 0.65).</li>
+<li>Organise scrolls smoothly with hundreds of planned moves.</li>
+<li>New name: Sheaf. The app, command-line tool (<code>sheaf-cli</code>), bundle identifier, website and documentation all use the new name.</li>
+<li>On first launch Sheaf copies a library made by an earlier version (in Application Support) into its own folder and leaves the old one untouched.</li>
+<li>Environment variables now begin <code>SHEAF_</code>.</li>
+</ul>
+<h2>[0.1.0] - unreleased</h2>
+<p>First development milestone. Built and tested on Apple Silicon, macOS 26.</p>
+<h3>Added</h3>
+<ul>
+<li>Folder selection, read-only incremental scanning, SQLite store, file browser.</li>
+<li>Local understanding with Ollama: embeddings, structured summaries, document types, topics and entities; on-device named-entity recognition and OCR.</li>
+<li>Natural-language search over passages, with the reason for each match.</li>
+<li>Relationship discovery with a library-calibrated similarity threshold and shared-name links; explanations for every relationship.</li>
+<li>Content-derived groups named by the local model; interactive graph view.</li>
+<li>Organisation proposals with per-move approval and optional clearer file names.</li>
+<li>Journaled, validated, undoable file moves; automatic rollback on failure; recovery after an interrupted run.</li>
+<li>Command-line twin (<code>sheaf-cli</code>), DMG packaging script, optional Sparkle updates.</li>
+</ul>
+<h3>Known limitations</h3>
+<ul>
+<li>Releases are ad-hoc signed and not notarised.</li>
+<li>Folder structures are one level deep.</li>
+<li>Tested on small libraries (tens of files). Large libraries (thousands of files) are untested.</li>
+</ul>
+</div>
+<footer><div class="wrap">
+  <a href="docs.html">Docs</a><a href="faq.html">FAQ</a><a href="benchmarks.html">Benchmarks</a><a href="privacy.html">Privacy</a><a href="changelog.html">Changelog</a><a href="roadmap.html">Roadmap</a><a href="https://github.com/NegiAkash890/sheaf">GitHub</a><a href="https://github.com/NegiAkash890/sheaf/issues">Report an issue</a>
+  <p>This site sets no cookies and has no sign-up.</p>
+</div></footer>
+</body></html>

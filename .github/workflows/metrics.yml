@@ -1,0 +1,39 @@
+name: Daily metrics
+# Writes daily.csv, daily-traffic.csv and daily-releases.csv on the "metrics" branch: stars, issues,
+# per-day unique visitors and cloners, and download counts per release file. Traffic needs a token with
+# repo access, stored as the secret METRICS_TOKEN; without it the traffic columns stay empty.
+on:
+  schedule:
+    - cron: "17 3 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Keep the script, then switch to the metrics branch
+        run: |
+          cp scripts/track-metrics.sh /tmp/track-metrics.sh
+          if git ls-remote --exit-code --heads origin metrics >/dev/null 2>&1; then
+            git fetch origin metrics
+            git checkout metrics
+          else
+            git checkout --orphan metrics
+            git rm -rf . >/dev/null 2>&1 || true
+          fi
+          mkdir -p metrics
+      - name: Take the snapshot
+        env:
+          GH_TOKEN: ${{ secrets.METRICS_TOKEN || secrets.GITHUB_TOKEN }}
+        run: bash /tmp/track-metrics.sh "${{ github.repository }}" metrics/daily.csv
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add metrics
+          git commit -m "metrics: $(date -u +%F)" || exit 0
+          git push origin metrics

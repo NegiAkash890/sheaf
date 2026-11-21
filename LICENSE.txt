@@ -1,0 +1,18 @@
+Sheaf: free-to-use licence
+
+Copyright (c) 2026 Akash (NegiAkash890). All rights reserved.
+
+You may download, install and use Sheaf for personal or commercial purposes at no charge.
+You may share the unmodified download from the official Releases page.
+
+You may not sell Sheaf, bundle it into a paid product, reverse engineer it, or redistribute
+modified copies. The source code is not part of this licence.
+
+Sheaf is provided "as is", without warranty of any kind. The authors are not liable for any
+loss or damage arising from its use. Sheaf never modifies files without an approved plan and
+keeps a journal so changes can be undone, but you remain responsible for your own backups.
+
+Ollama and the models Sheaf uses are separate software under their own licences.
+
+The author plans to publish the source code under an open-source licence when this
+repository reaches 100 GitHub stars. This is a statement of intent, not a licence grant.
