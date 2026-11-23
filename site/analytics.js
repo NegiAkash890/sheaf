@@ -30,14 +30,14 @@
     var b = document.createElement('div');
     b.setAttribute('role', 'dialog'); b.setAttribute('aria-label', 'Analytics choice');
     b.style.cssText = 'position:fixed;left:16px;right:16px;bottom:16px;max-width:560px;margin:0 auto;z-index:9999;background:#1f2a24;color:#fff;border-radius:14px;padding:14px 16px;font:14px/1.45 -apple-system,system-ui,sans-serif;box-shadow:0 8px 30px rgba(0,0,0,.25);display:flex;gap:12px;align-items:center;flex-wrap:wrap';
-    b.innerHTML = '<span style="flex:1 1 260px">Can this website count visits with Google Analytics? The Sheaf app itself never sends anything. <a href="/privacy.html" style="color:#bfe3cf">Details</a></span>';
+    b.innerHTML = '<span style="flex:1 1 260px">This site uses cookies to count visits. The Sheaf app sends nothing. <a href="/privacy.html" style="color:#bfe3cf">Details</a></span>';
     function btn(label, primary, v) {
       var x = document.createElement('button'); x.textContent = label;
       x.style.cssText = 'cursor:pointer;border:0;border-radius:9px;padding:8px 14px;font:inherit;font-weight:600;' + (primary ? 'background:#7fc8a0;color:#10261a' : 'background:rgba(255,255,255,.14);color:#fff');
       x.onclick = function () { write(v); b.remove(); if (v === 'yes') load(); };
       return x;
     }
-    b.appendChild(btn('No thanks', false, 'no')); b.appendChild(btn('Yes, count me', true, 'yes'));
+    b.appendChild(btn('No', false, 'no')); b.appendChild(btn('OK', true, 'yes'));
     document.body.appendChild(b);
   }
 
