@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Privacy · Sheaf</title><link rel="stylesheet" href="style.css"></head><body>
+<title>Privacy · Sheaf</title><link rel="stylesheet" href="style.css"><script defer src="/analytics.js"></script>
+</head><body>
 <div class="betabar">Free early-user beta. Your feedback shapes what ships next. <a href="https://github.com/NegiAkash890/sheaf/issues/new/choose">Open an issue on GitHub</a></div>
 <header class="nav"><div class="wrap"><a class="brand" href="./"><img src="img/icon.png" alt="">Sheaf <span class="tag">Beta</span></a><a href="docs.html">Docs</a><a href="faq.html">FAQ</a><a class="keep" href="https://github.com/NegiAkash890/sheaf">GitHub</a></div></header>
 <div class="wrap doc">
@@ -9,9 +10,9 @@
 <ul>
 <li><b>Your files stay on your Mac.</b> Reading, embedding, summarising, searching and organising all happen locally. File contents, names and metadata are never sent anywhere.</li>
 <li><b>Network use.</b> Sheaf connects only to the model server on your own machine (<code>127.0.0.1:11434</code>), with one exception that you start yourself: if you choose <b>Install Ollama</b> in setup, Sheaf downloads Ollama once from its official release page on GitHub (<code>github.com/ollama/ollama</code>), checks it against the checksum published there, and keeps it in its own folder. Nothing about you or your files is part of that request. When you choose to download a model, Sheaf asks that local server (Ollama) to fetch it, and Ollama downloads it from its own model library; nothing about your files is part of that request. If a release has in-app updates enabled and you choose to check for updates, it fetches the update feed from the project's release hosting; no identifying information is added.</li>
-<li><b>No telemetry, analytics, crash reporting, accounts, advertising or tracking.</b> There is no server operated by the Sheaf project.</li>
+<li><b>The app has no telemetry, analytics, crash reporting, accounts, advertising or tracking.</b> There is no server operated by the Sheaf project.</li>
 <li><b>What is stored.</b> A SQLite database in <code>~/Library/Application Support/Sheaf</code> holds file paths, extracted text passages, summaries, vectors, relationships, plans and the change journal. Delete that folder to remove it all.</li>
-<li><b>The website</b> is static, sets no cookies and has no sign-up.</li>
+<li><b>The website</b> is static and has no sign-up. Only if you press <b>Yes</b> on the banner, it counts visits and clicks on the download button with Google Analytics, which sets cookies. Press <b>No thanks</b> and nothing is loaded or stored. Your choice is kept in your browser only. Advertising features and personalised ads are switched off. This applies to the website only, never to the app.</li>
 </ul>
 <p>Ollama and the models you install are separate software with their own policies.</p>
 <span id="verify"></span>
