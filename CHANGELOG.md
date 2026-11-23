@@ -1,6 +1,18 @@
 # Changelog
 
-## 0.1.1 (unreleased)
+## 0.1.2 (2026-11-23)
+
+- People: open any person, place or organisation and see every file that mentions them, across all your folders. Names are checked in context, so common words are left out.
+- Expiry Radar: dates written inside your files (passports, insurance, warranties, leases) are listed by how soon they fall due.
+- Downloaded from: Sheaf reads where a file came from (Gmail, WhatsApp, Google Drive, a website) and you can search by it, for example "from WhatsApp".
+- List and grid views for People, Radar and the Library. In the grid, folders open like in Finder.
+- The Overview's People, Places, Things and Ideas rows open their screens.
+- Screens open faster: files and collections load in the background, and the Graph is prepared before you open it.
+- Less memory: the writing model is unloaded sooner, and two files are read at a time.
+- Shorter wording on the Overview and in empty states. The name pills on the Overview no longer show counts, and Clear Counts is gone.
+- Radar cards no longer repeat "Expires" under "Already passed".
+
+## 0.1.1 (2026-11-21)
 
 - New name: Sheaf.
 - The highlight behind the Sheaf logo (the Overview) now spans the full sidebar width like the other rows.
