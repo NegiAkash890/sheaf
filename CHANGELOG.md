@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.3 (2026-11-26)
+
+- Organise: every file in a proposed plan now shows a few words on why it is going where it is, for example "Mentions Suresh Rao, rent" or "About leases". Nothing to expand; it is on the row.
+
 ## 0.1.2 (2026-11-23)
 
 - People: open any person, place or organisation and see every file that mentions them, across all your folders. Names are checked in context, so common words are left out.
