@@ -18,16 +18,13 @@ code { font:13.5px var(--mono); background:#f0f0eb; padding:2px 6px; border-radi
 pre { background:#f4f4ef; border:1px solid var(--line); border-radius:8px; padding:18px 20px; overflow-x:auto; font:13.5px/1.7 var(--mono); margin:0; }
 pre code { background:none; padding:0; font-size:inherit; }
 
-/* beta bar + nav */
-.betabar { background:#1f2a25; color:#d9e4de; font-size:14px; text-align:center; padding:9px 16px; }
-.betabar a { color:#fff; text-decoration:underline; text-underline-offset:3px; margin-left:4px; }
+/* nav */
 header.nav { position:sticky; top:0; background:rgba(255,255,255,.92); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border-bottom:1px solid var(--line); z-index:10; }
 header.nav .wrap { display:flex; align-items:center; gap:26px; height:60px; }
 header.nav .brand { margin-right:auto; display:flex; align-items:center; gap:10px; color:var(--text); font-weight:650; font-size:17px; letter-spacing:-.02em; }
 header.nav .brand img { width:26px; height:26px; border-radius:6px; }
 header.nav a { color:var(--muted); font-size:14.5px; } header.nav a:hover { color:var(--text); text-decoration:none; }
 header.nav a.keep { color:var(--text); font-weight:500; border:1px solid var(--line); border-radius:6px; padding:6px 12px; } header.nav a.keep:hover { background:var(--alt); }
-.tag { font:600 10.5px/1 "Inter",sans-serif; letter-spacing:.06em; text-transform:uppercase; color:#7a5a12; background:var(--warn-bg); border:1px solid #ecd9a4; padding:3px 6px; border-radius:4px; }
 
 /* buttons */
 .btn { display:inline-flex; align-items:center; gap:8px; padding:11px 18px; border-radius:7px; font-weight:500; font-size:15.5px; line-height:1.2; border:1px solid transparent; }
@@ -202,22 +199,6 @@ section.srcband .big a { color:#fff; text-decoration:underline; text-underline-o
 @media (max-width:860px) { .cards3 { grid-template-columns:1fr; } ul.lines li { grid-template-columns:1fr; gap:4px; } .srcbox { grid-template-columns:1fr; gap:18px; } .bigstar svg { width:52px; height:52px; } }
 @media (max-width:560px) { .reqrow { grid-template-columns:1fr 1fr; } .reqrow > div:nth-child(odd) { border-left:0; } .reqrow > div:nth-child(3) { border-left:0; } .reqrow > div:nth-child(n+3) { border-top:1px solid var(--line); } .reqrow > div:nth-child(4) { border-left:1px solid var(--line); } }
 
-/* Hero: the same kind of folder before and after, in one frame */
-.hero-toggle{position:relative}
-.hero-toggle .seg{display:inline-flex;gap:2px;padding:3px;margin:0 0 16px;background:var(--alt);border:1px solid var(--line);border-radius:999px}
-.hero-toggle .seg button{font:inherit;font-size:14px;font-weight:500;color:var(--muted);background:transparent;border:0;border-radius:999px;padding:6px 18px;cursor:pointer}
-.hero-toggle .seg button[aria-pressed="true"]{background:#fff;color:var(--text);box-shadow:0 1px 2px rgba(20,30,25,.12)}
-.hero-toggle .seg button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.hero-toggle .stack{position:relative}
-.hero-toggle .v-before{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .25s}
-.hero-toggle[data-show="before"] .v-before{opacity:1}
-.hero-toggle[data-show="before"] .v-after{opacity:0}
-.hero-toggle .v-after{transition:opacity .25s}
-.hero-toggle figcaption{display:none}
-.hero-toggle[data-show="after"] figcaption[data-for="after"],.hero-toggle[data-show="before"] figcaption[data-for="before"]{display:block}
-.hero-toggle:not([data-show]) figcaption[data-for="after"]{display:block}
-@media (prefers-reduced-motion:reduce){.hero-toggle .v-before,.hero-toggle .v-after{transition:none}}
-
 /* app windows keep their own rounded corners (transparent PNG/WebP), so the shadow follows the window shape */
 .shot.win{border-radius:0;background:none;box-shadow:none;filter:drop-shadow(0 1px 2px rgba(20,30,25,.10)) drop-shadow(0 14px 28px rgba(20,30,25,.14))}
 .hero .shot.win{box-shadow:none;filter:drop-shadow(0 2px 4px rgba(20,30,25,.10)) drop-shadow(0 24px 40px rgba(20,30,25,.20)) drop-shadow(0 50px 70px rgba(20,30,25,.14))}
@@ -235,3 +216,53 @@ section.srcband .big a { color:#fff; text-decoration:underline; text-underline-o
 .reqsplit .steps li { counter-increment:st; }
 .reqsplit .steps li::before { content:counter(st); position:absolute; left:2px; top:15px; width:22px; height:22px; border-radius:50%; background:var(--text); color:#fff; font:600 12px/22px var(--mono); text-align:center; }
 @media (max-width:860px) { .reqsplit { grid-template-columns:1fr; } }
+
+/* Pull a thread: pick a name and one thread runs through every file that mentions it. */
+.tf .eyebrow{margin:0 0 10px;font:600 12px/1 "Inter",sans-serif;letter-spacing:.09em;text-transform:uppercase;color:var(--accent)}
+.tf{display:none}
+.tf.on{display:block}
+.tf-grid{display:grid;grid-template-columns:minmax(0,380px) minmax(0,1fr);gap:44px;align-items:center}
+.tf h2{max-width:14em}
+.tf-sub{margin:10px 0 22px;color:var(--muted);max-width:30em}
+.tf-chips{display:flex;flex-wrap:wrap;gap:7px}
+.tf-chip{display:flex;flex-direction:column;align-items:flex-start;gap:1px;padding:8px 12px 9px;font:inherit;font-size:14.5px;font-weight:600;letter-spacing:-.01em;color:var(--text);
+  background:#fff;border:1px solid var(--line);border-radius:10px;cursor:pointer;transition:border-color .15s,background .15s,box-shadow .15s}
+.tf-chip small{font:600 10px/1.2 "Inter",sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--faint)}
+.tf-chip:hover{border-color:#c9d5cf}
+.tf-chip[aria-pressed="true"]{border-color:var(--accent);background:#f1f6f3;box-shadow:0 0 0 3px rgba(40,95,80,.12)}
+.tf-chip[aria-pressed="true"] small{color:var(--accent)}
+.tf-chip:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.tf-cap{min-height:3.2em;margin:20px 0 0;font-size:17px;line-height:1.45;color:var(--text);font-weight:500;letter-spacing:-.01em}
+.tf-note{margin:14px 0 0;font-size:13.5px;color:var(--faint)}
+
+.tf-field{position:relative;height:440px;border:1px solid var(--line);border-radius:14px;background:
+  radial-gradient(circle at 1px 1px,#e4e8e5 1px,transparent 1.4px) 0 0/22px 22px,#fbfcfb}
+.tf-svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none;z-index:0}
+.tf-thread{fill:none;stroke:var(--accent);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.tf-card{position:absolute;z-index:1;left:calc(var(--x) * 1% * .94 + 3%);top:calc(var(--y) * 1% * .93 + 3.5%);width:30.5%;height:46px;display:flex;align-items:center;gap:9px;padding:0 10px;
+  background:#fff;border:1px solid var(--line);border-radius:9px;transform:rotate(calc(var(--rot) * 1deg));box-shadow:0 1px 2px rgba(20,30,25,.06);
+  transition:opacity .28s,border-color .28s,box-shadow .28s,background .28s}
+.tf-card .tx{min-width:0;flex:1;line-height:1.2}
+.tf-card .nm{display:block;font-size:12.5px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tf-card .sub{position:relative;display:block;height:15px;font-size:11.5px}
+.tf-card .sub span{position:absolute;left:0;right:0;top:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;transition:opacity .28s}
+.tf-card .fold{color:var(--faint)}
+.tf-card .snip{color:var(--muted);opacity:0}
+.tf-card .snip mark{background:rgba(255,216,77,.55);color:var(--text);padding:0 1px;border-radius:2px}
+.tf-field.sel .tf-card{opacity:.3}
+.tf-field.sel .tf-card.hit{opacity:1;border-color:var(--accent);box-shadow:0 0 0 3px rgba(40,95,80,.12),0 6px 14px rgba(20,30,25,.10);background:#fff}
+.tf-card.hit .fold{opacity:0}.tf-card.hit .snip{opacity:1}
+.tf-ic{flex:none;width:26px;height:20px;border-radius:4px;color:#fff;font:700 8px/20px "Inter",sans-serif;text-align:center;letter-spacing:.02em}
+.tf-ic.pdf{background:#b4532f}.tf-ic.img{background:#2f7d62}.tf-ic.txt{background:#6b7a74}.tf-ic.csv{background:#3d7d3d}.tf-ic.pkg{background:#7a5ea8}.tf-ic.json{background:#a08a2e}
+
+@media (max-width:900px){
+  .tf-grid{grid-template-columns:1fr;gap:26px}
+  .tf h2{max-width:none}
+}
+@media (max-width:560px){
+  .tf-card .sub{font-size:11px}.tf-card .nm{font-size:12px}
+  .tf-field{height:620px}
+  .tf-card{width:48.5%;gap:7px;padding:0 8px;left:calc(var(--mx) * 1% * .96 + 2%);top:calc(var(--my) * 1% * .93 + 1.5%)}
+  .tf-chip{min-width:0;flex:1 1 40%}
+}
+@media (prefers-reduced-motion:reduce){.tf-card,.tf-card .sub span,.tf-chip{transition:none}}

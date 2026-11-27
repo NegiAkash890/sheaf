@@ -17,9 +17,8 @@
 <script defer src="/analytics.js"></script>
 </head>
 <body>
-<div class="betabar">Free early-user beta. Your feedback shapes what ships next. <a href="https://github.com/NegiAkash890/sheaf/issues/new/choose">Open an issue on GitHub</a></div>
 <header class="nav"><div class="wrap">
-  <a class="brand" href="./"><img src="img/icon.png" alt="">Sheaf <span class="tag">Beta</span></a>
+  <a class="brand" href="./"><img src="img/icon.png" alt="">Sheaf</a>
   <a href="#tour">The app</a><a href="#compare">Compare</a><a href="#requirements">Requirements</a><a href="https://github.com/NegiAkash890/sheaf/releases/latest">Download</a>
   <a class="keep" href="https://github.com/NegiAkash890/sheaf">GitHub</a>
 </div></header>
@@ -32,29 +31,112 @@
     <a class="btn secondary" href="https://github.com/NegiAkash890/sheaf"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>View on GitHub</a>
   </div>
   <div class="meta"><span>macOS 14+, Apple Silicon</span></div>
-  <figure class="figure hero-toggle">
-    <div class="seg" role="group" aria-label="Show the folder before or after Sheaf">
-      <button type="button" data-v="before" aria-pressed="false">Before</button>
-      <button type="button" data-v="after" aria-pressed="true">After</button>
-    </div>
-    <div class="stack">
-      <img class="shot v-before" src="img/before.webp" width="1600" height="894" alt="A Downloads folder in Finder: installers, PDFs, spreadsheets and screenshots in no particular order" loading="lazy">
-      <img class="shot win v-after" src="img/hero.webp" width="2000" height="1117" alt="The Sheaf app showing the same kind of folder sorted into named collections, with the list of files in each">
-    </div>
-    <figcaption data-for="before">Before: a typical Downloads folder in Finder (file names changed). Installers, PDFs and screenshots, newest first, nothing grouped.</figcaption>
-    <figcaption data-for="after">After: every file placed in a collection named for what it holds. These are the invented sample files that ship with Sheaf, so you can try every screen before it reads your own.</figcaption>
+  <figure class="figure">
+    <img class="shot win" src="img/hero.webp" width="2000" height="1117" alt="The Sheaf app showing a folder sorted into named collections, with the list of files in each">
+    <figcaption>Sheaf sorting the invented sample files that ship with the app, so you can try every screen before it reads your own.</figcaption>
   </figure>
-  <script>
-  (function(){var f=document.querySelector('.hero-toggle');if(!f)return;
-    function show(v){f.setAttribute('data-show',v);f.querySelectorAll('.seg button').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.v===v))});}
-    f.querySelectorAll('.seg button').forEach(function(b){b.addEventListener('click',function(){show(b.dataset.v)})});
-    show('after');
-  })();
-  </script>
 </div></section>
+<section class="tf" id="thread" aria-labelledby="tf-h">
+  <div class="wrap tf-grid">
+    <div class="tf-copy">
+      <p class="eyebrow">Find it by what is inside</p>
+      <h2 id="tf-h">Pull on a name. Every file that mentions it follows.</h2>
+      <p class="tf-sub">Sheaf reads inside your files, so a person, a place or an idea ties together files that never shared a name or a folder.</p>
+      <div class="tf-chips" role="group" aria-label="Pick a name to follow"></div>
+      <p class="tf-cap" aria-live="polite"></p>
+      <p class="tf-note">Click a name, or just watch. An illustration with invented files.</p>
+    </div>
+    <div class="tf-field" aria-hidden="true">
+      <svg class="tf-svg"><path class="tf-thread" d=""/></svg>
+    </div>
+  </div>
+</section>
+<script>
+var TF_FILES=[{"n": "agreement_final_FINAL.pdf", "f": "Documents", "e": "pdf", "l": "PDF", "m": {"place": "flat in <mark>Bengaluru</mark>", "person": "Tenant: <mark>Priya</mark> Nair"}, "x": 69.1, "y": 64.7, "mx": 0, "my": 42.6, "rot": -1.2}, {"n": "Scan 14-06-2026.pdf", "f": "Downloads", "e": "pdf", "l": "PDF", "m": {"place": "rent, <mark>Bengaluru</mark>", "person": "paid by <mark>Priya</mark> Nair"}, "x": 68.9, "y": 88.5, "mx": 0, "my": 14.2, "rot": -1.4}, {"n": "flight_eticket (1).pdf", "f": "Downloads", "e": "pdf", "l": "PDF", "m": {"place": "<mark>Bengaluru</mark> to Goa", "person": "Passenger: <mark>Priya</mark> Nair", "thing": "<mark>passport</mark> required", "idea": "flight to <mark>Goa</mark>"}, "x": 0.2, "y": 45.4, "mx": 52, "my": 42.6, "rot": 0.5}, {"n": "Scan 0042.pdf", "f": "Desktop", "e": "pdf", "l": "PDF", "m": {"person": "Given name: <mark>Priya</mark>", "thing": "<mark>Passport</mark> of India"}, "x": 1.3, "y": 66.3, "mx": 52, "my": 85.2, "rot": -0.8}, {"n": "visa_form.pdf", "f": "Downloads", "e": "pdf", "l": "PDF", "m": {"thing": "<mark>passport</mark> valid to 2031"}, "x": 34.1, "y": 87.4, "mx": 52, "my": 71.0, "rot": 1.2}, {"n": "hotel booking.pdf", "f": "WhatsApp", "e": "pdf", "l": "PDF", "m": {"person": "Guest: <mark>Priya</mark> Nair", "thing": "<mark>passport</mark> at check-in", "idea": "<mark>Goa</mark>, three nights"}, "x": 69.0, "y": 1.8, "mx": 0, "my": 71.0, "rot": -1.3}, {"n": "kal ka plan.txt", "f": "Desktop", "e": "txt", "l": "TXT", "m": {"place": "<mark>Bengaluru</mark> airport cab", "idea": "packing for <mark>Goa</mark>"}, "x": 68.2, "y": 22.4, "mx": 52, "my": 56.8, "rot": -0.3}, {"n": "electricity bill.pdf", "f": "Downloads", "e": "pdf", "l": "PDF", "m": {"place": "<mark>Bengaluru</mark> Electricity"}, "x": 0.4, "y": 86.7, "mx": 52, "my": 0.0, "rot": 0.6}, {"n": "expenses (1).csv", "f": "Documents", "e": "csv", "l": "CSV", "m": {"idea": "<mark>Goa</mark> trip food"}, "x": 35.8, "y": 1.4, "mx": 0, "my": 0.0, "rot": -0.2}, {"n": "IMG_0101.jpg", "f": "Photos", "e": "img", "l": "JPG", "m": {}, "x": 0.9, "y": 1.7, "mx": 0, "my": 28.4, "rot": 0.2}, {"n": "groceries.txt", "f": "Desktop", "e": "txt", "l": "TXT", "m": {}, "x": 35.4, "y": 43.1, "mx": 0, "my": 56.8, "rot": -0.8}, {"n": "Zoom-6.2.pkg", "f": "Downloads", "e": "pkg", "l": "PKG", "m": {}, "x": 35.3, "y": 23.9, "mx": 52, "my": 14.2, "rot": 0.5}, {"n": "api.json", "f": "Documents", "e": "json", "l": "JSON", "m": {}, "x": 34.3, "y": 64.5, "mx": 0, "my": 85.2, "rot": -0.5}, {"n": "IMG_0102.jpg", "f": "Photos", "e": "img", "l": "JPG", "m": {}, "x": 0.4, "y": 23.0, "mx": 52, "my": 28.4, "rot": -0.5}];
+</script>
+<script>
+(function(){
+  var sec=document.getElementById('thread');if(!sec)return;
+  var field=sec.querySelector('.tf-field'),svg=sec.querySelector('.tf-svg'),path=sec.querySelector('.tf-thread');
+  var chipsEl=sec.querySelector('.tf-chips'),cap=sec.querySelector('.tf-cap');
+  var RM=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var FILES=window.TF_FILES;
+  var KEYS=[{k:'place',t:'Place',v:'Bengaluru',w:'bengaluru'},{k:'person',t:'Person',v:'Priya Nair',w:'priya'},{k:'thing',t:'Thing',v:'Passport',w:'passport'},{k:'idea',t:'Idea',v:'Goa trip',w:'goa'}];
+  var cards=FILES.map(function(f){
+    var d=document.createElement('div');d.className='tf-card';
+    d.style.cssText='--x:'+f.x+';--y:'+f.y+';--mx:'+f.mx+';--my:'+f.my+';--rot:'+f.rot;
+    d.innerHTML='<span class="tf-ic '+f.e+'">'+f.l+'</span><span class="tx"><b class="nm"></b><span class="sub"><span class="fold"></span><span class="snip"></span></span></span>';
+    d.querySelector('.nm').textContent=f.n;d.querySelector('.fold').textContent=f.f;
+    field.appendChild(d);return d;
+  });
+  var chips=KEYS.map(function(o,i){
+    var b=document.createElement('button');b.type='button';b.className='tf-chip';b.setAttribute('aria-pressed','false');
+    b.innerHTML='<small>'+o.t+'</small>';b.appendChild(document.createTextNode(o.v));
+    b.addEventListener('click',function(){stop();select(i)});
+    if(matchMedia('(hover:hover) and (pointer:fine)').matches)b.addEventListener('mouseenter',function(){stop();select(i)});
+    chipsEl.appendChild(b);return b;
+  });
+  function center(c){return{x:c.offsetLeft+c.offsetWidth/2,y:c.offsetTop+c.offsetHeight/2}}
+  function tour(idx){                         // nearest-neighbour walk from the top-left card
+    var pts=idx.map(function(i){var c=center(cards[i]);c.i=i;return c});
+    var left=pts.slice(),out=[],cur=left.reduce(function(a,b){return a.x+a.y*.6<=b.x+b.y*.6?a:b});
+    while(left.length){out.push(cur);left.splice(left.indexOf(cur),1);if(!left.length)break;
+      cur=left.reduce(function(a,b){return dist(cur,a)<=dist(cur,b)?a:b})}
+    return out;
+  }
+  function dist(a,b){return Math.hypot(a.x-b.x,a.y-b.y)}
+  function curve(p){                          // smooth line through the points (Catmull-Rom as Bezier)
+    var d='M'+p[0].x.toFixed(1)+' '+p[0].y.toFixed(1);
+    for(var i=0;i<p.length-1;i++){
+      var a=p[i-1]||p[i],b=p[i],c=p[i+1],e=p[i+2]||c;
+      d+=' C'+(b.x+(c.x-a.x)/6).toFixed(1)+' '+(b.y+(c.y-a.y)/6).toFixed(1)+' '+(c.x-(e.x-b.x)/6).toFixed(1)+' '+(c.y-(e.y-b.y)/6).toFixed(1)+' '+c.x.toFixed(1)+' '+c.y.toFixed(1);
+    }
+    return d;
+  }
+  var cur=-1;
+  function select(n){
+    cur=n;var o=KEYS[n];
+    chips.forEach(function(b,i){b.setAttribute('aria-pressed',String(i===n))});
+    var hit=[];FILES.forEach(function(f,i){if(f.m[o.k])hit.push(i)});
+    var order=tour(hit),total=0,cum=[0];
+    for(var i=1;i<order.length;i++){total+=dist(order[i-1],order[i]);cum.push(total)}
+    var dur=RM?0:700+hit.length*160;
+    field.classList.add('sel');
+    cards.forEach(function(c,i){
+      var on=hit.indexOf(i)>=0;c.classList.toggle('hit',on);
+      if(on){c.querySelector('.snip').innerHTML=FILES[i].m[o.k];
+        var at=order.indexOf(order.filter(function(p){return p.i===i})[0]);
+        c.style.transitionDelay=c.querySelector('.snip').style.transitionDelay=(total?cum[at]/total*dur:0).toFixed(0)+'ms';
+        c.querySelector('.fold').style.transitionDelay=c.style.transitionDelay;
+      }else{c.style.transitionDelay='0ms';c.querySelector('.snip').style.transitionDelay='0ms';c.querySelector('.fold').style.transitionDelay='0ms'}
+    });
+    path.style.transition='none';path.style.opacity='0';
+    path.setAttribute('d',curve(order));
+    var L=path.getTotalLength();path.style.strokeDasharray=L;path.style.strokeDashoffset=RM?0:L;
+    path.getBoundingClientRect();
+    path.style.opacity='1';
+    if(!RM){path.style.transition='stroke-dashoffset '+dur+'ms cubic-bezier(.4,.05,.25,1)';path.style.strokeDashoffset=0}
+    var folders={},named=0;
+    hit.forEach(function(i){folders[FILES[i].f]=1;if(FILES[i].n.toLowerCase().indexOf(o.w)>=0)named++});
+    var nf=Object.keys(folders).length;
+    cap.textContent=hit.length+' files in '+nf+' folders mention '+o.v+'. '+(named===0?'None has it in the file name.':'Only '+named+' has it in the file name.');
+  }
+  var timer=null,seen=false,live=true;
+  function stop(){live=false;if(timer){clearInterval(timer);timer=null}}
+  function play(){if(!live||RM||timer)return;timer=setInterval(function(){select((cur+1)%KEYS.length)},5200)}
+  sec.classList.add('on');
+  select(0);
+  var rs;addEventListener('resize',function(){clearTimeout(rs);rs=setTimeout(function(){select(cur)},120)});
+  if('IntersectionObserver' in window&&!RM){
+    new IntersectionObserver(function(es){
+      if(es[0].isIntersecting){if(!seen){seen=true;select(0)}play()}else if(timer){clearInterval(timer);timer=null}
+    },{threshold:.5}).observe(field);
+  }
+})();
+</script>
 <section class="alt" id="tour" ><div class="wrap">
   <h2>Inside the app</h2>
-  <p class="lead">Screenshots of the beta running on the sample folder of invented files, with local models on a Mac.</p>
+  <p class="lead">Screenshots of Sheaf running on the sample folder of invented files, with local models on a Mac.</p>
   <div class="row">
     <div class="txt"><h3>Your folder, summed up</h3><p>How many files, how many collections, and every person, place, thing and idea Sheaf found inside them. Click any name to see every file it appears in.</p></div>
     <figure><img class="shot win" src="img/overview.webp" alt="Sheaf Overview: 64 messy files, 6 tidy collections, with the people, places, things and ideas found in the files" loading="lazy"></figure>
@@ -144,15 +226,15 @@
     <div>
       <h3>Getting started</h3>
       <ol class="steps">
-        <li><b>Download and open Sheaf.</b><span>It is an unsigned beta, so macOS asks you to confirm: right-click, choose Open, then Open Anyway. <a href="docs.html">Install guide</a></span></li>
+        <li><b>Download and open Sheaf.</b><span>Sheaf is not signed by Apple yet, so macOS asks you to confirm: right-click, choose Open, then Open Anyway. <a href="docs.html">Install guide</a></span></li>
         <li><b>Run the one-time setup.</b><span>Pick Bigger or Light. Sheaf downloads the AI and installs what it needs.</span></li>
         <li><b>Add a folder.</b><span>Or try the sample files first. Nothing moves until you approve a plan.</span></li>
       </ol>
     </div>
   </div>
 </div></section>
-<section id="beta" ><div class="wrap">
-  <h2>Beta status</h2>
+<section id="status" ><div class="wrap">
+  <h2>Where it stands</h2>
   <p class="lead">Sheaf works on real folders and is still being built. This is where it stands.</p>
   <div class="status">
     <div><h3>Working today</h3><ul>
@@ -198,7 +280,7 @@
     <span class="bigstar"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.5 2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.3l-5.9 3.2 1.2-6.5L2.5 9.4l6.6-.9z"/></svg></span>
     <div>
       <h2>The source goes public at 100 stars</h2>
-      <p class="big">The source is private while the beta settles. When the Sheaf repository on GitHub reaches <b>100 stars</b>, the source goes public. Until then, the <a href="privacy.html">privacy page</a> lists what you can check yourself.</p>
+      <p class="big">The source is private for now. When the Sheaf repository on GitHub reaches <b>100 stars</b>, the source goes public. Until then, the <a href="privacy.html">privacy page</a> lists what you can check yourself.</p>
       <div class="actions">
         <a class="btn light" href="https://github.com/NegiAkash890/sheaf"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m12 2.5 2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.3l-5.9 3.2 1.2-6.5L2.5 9.4l6.6-.9z"/></svg>Star Sheaf on GitHub</a>
         <a class="btn ghost" href="privacy.html">What you can check yourself</a>
@@ -208,7 +290,7 @@
 </div></section>
 
 <footer><div class="wrap">
-  <a href="docs.html">Docs</a><a href="faq.html">FAQ</a><a href="#beta">Beta status</a><a href="privacy.html">Privacy</a><a href="changelog.html">Changelog</a><a href="roadmap.html">Roadmap</a><a href="https://github.com/NegiAkash890/sheaf">GitHub</a><a href="https://github.com/NegiAkash890/sheaf/issues">Report an issue</a>
+  <a href="docs.html">Docs</a><a href="faq.html">FAQ</a><a href="#status">Where it stands</a><a href="privacy.html">Privacy</a><a href="changelog.html">Changelog</a><a href="roadmap.html">Roadmap</a><a href="https://github.com/NegiAkash890/sheaf">GitHub</a><a href="https://github.com/NegiAkash890/sheaf/issues">Report an issue</a>
   <p>This site sets no cookies and has no sign-up.</p>
 </div></footer>
 </body>
