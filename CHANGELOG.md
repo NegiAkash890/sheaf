@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.1.5 (2026-11-28)
+
+- Compare side by side: when two files would end up with the same name, open both next to each other and keep the one you want.
+- History is a simple logbook: put back one file or a whole batch. Files already emptied from the Trash are greyed out.
+- Payslips, bank statements, tax papers, bills, insurance, tickets, rent agreements, offer letters and admit cards are named from what is on the page, and Sheaf learns your naming style from your renames.
+- A calmer toolbar with one search field (Cmd-F), new icons, and simpler Organise and Settings screens.
+- Faster: screens no longer redraw for every file while Sheaf reads, and Collections scrolls more smoothly.
+- Fixes: Space previews the right file, Back and Forward bring back searches, and menu icons are no longer black.
+
+## 0.1.4 (2026-11-27)
+
+- Updates: Sheaf checks for new versions and installs them when you say so (Settings > Updates). Nothing installs without a click. Earlier copies have no updater, so 0.1.4 is installed by hand.
+
 ## 0.1.3 (2026-11-26)
 
 - Organise: every file in a proposed plan now shows a few words on why it is going where it is, for example "Mentions Suresh Rao, rent" or "About leases". Nothing to expand; it is on the row.

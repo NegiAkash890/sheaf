@@ -5,69 +5,65 @@
 <header class="nav"><div class="wrap"><a class="brand" href="./"><img src="img/icon.png" alt="">Sheaf</a><a href="docs.html">Docs</a><a href="faq.html">FAQ</a><a class="keep" href="https://github.com/NegiAkash890/sheaf">GitHub</a></div></header>
 <div class="wrap doc">
 <h1>Changelog</h1>
-<p>All notable changes are recorded here. Format follows Keep a Changelog; versions follow SemVer.</p>
-<h2>[0.1.2] - 2026-11-23</h2>
-<h3>Added</h3>
+<h2>0.1.5 (2026-11-28)</h2>
+<ul>
+<li>Compare side by side: when two files would end up with the same name, open both next to each other and keep the one you want.</li>
+<li>History is a simple logbook: put back one file or a whole batch. Files already emptied from the Trash are greyed out.</li>
+<li>Payslips, bank statements, tax papers, bills, insurance, tickets, rent agreements, offer letters and admit cards are named from what is on the page, and Sheaf learns your naming style from your renames.</li>
+<li>A calmer toolbar with one search field (Cmd-F), new icons, and simpler Organise and Settings screens.</li>
+<li>Faster: screens no longer redraw for every file while Sheaf reads, and Collections scrolls more smoothly.</li>
+<li>Fixes: Space previews the right file, Back and Forward bring back searches, and menu icons are no longer black.</li>
+</ul>
+<h2>0.1.4 (2026-11-27)</h2>
+<ul>
+<li>Updates: Sheaf checks for new versions and installs them when you say so (Settings &gt; Updates). Nothing installs without a click. Earlier copies have no updater, so 0.1.4 is installed by hand.</li>
+</ul>
+<h2>0.1.3 (2026-11-26)</h2>
+<ul>
+<li>Organise: every file in a proposed plan now shows a few words on why it is going where it is, for example "Mentions Suresh Rao, rent" or "About leases". Nothing to expand; it is on the row.</li>
+</ul>
+<h2>0.1.2 (2026-11-23)</h2>
 <ul>
 <li>People: open any person, place or organisation and see every file that mentions them, across all your folders. Names are checked in context, so common words are left out.</li>
 <li>Expiry Radar: dates written inside your files (passports, insurance, warranties, leases) are listed by how soon they fall due.</li>
-<li>Downloaded from: Sheaf reads where a file came from (Gmail, WhatsApp, Google Drive, a website) and you can search by it, for example &quot;from WhatsApp&quot;.</li>
+<li>Downloaded from: Sheaf reads where a file came from (Gmail, WhatsApp, Google Drive, a website) and you can search by it, for example "from WhatsApp".</li>
 <li>List and grid views for People, Radar and the Library. In the grid, folders open like in Finder.</li>
 <li>The Overview's People, Places, Things and Ideas rows open their screens.</li>
-</ul>
-<h3>Changed</h3>
-<ul>
 <li>Screens open faster: files and collections load in the background, and the Graph is prepared before you open it.</li>
 <li>Less memory: the writing model is unloaded sooner, and two files are read at a time.</li>
 <li>Shorter wording on the Overview and in empty states. The name pills on the Overview no longer show counts, and Clear Counts is gone.</li>
-<li>Radar cards no longer repeat &quot;Expires&quot; under &quot;Already passed&quot;.</li>
+<li>Radar cards no longer repeat "Expires" under "Already passed".</li>
 </ul>
-<h2>[0.1.1] - 2026-11-21</h2>
-<h3>Added</h3>
+<h2>0.1.1 (2026-11-21)</h2>
 <ul>
-<li>Search by people, places, things and ideas found inside your files, with the collection a result belongs to shown above the results.</li>
-<li>Hybrid search: meaning and exact words together, file names that contain every word typed rank high, PDF results open on the matching page.</li>
-<li>Plain-language filters ("pkg files", "pdfs from last week about rent"), read without a model.</li>
-<li>A fit score for every file in a collection, from how it links to the rest (no model). Loose fits are marked; clear misfits are left out.</li>
-<li>Collections recognise the kind of paper (CV, certificate, marksheet, ID, offer letter, receipt), so a CV is not grouped with the certificates it lists. Broad or Detailed sorting in Settings.</li>
-<li>Collection names never use a person's name.</li>
+<li>New name: Sheaf.</li>
+<li>The highlight behind the Sheaf logo (the Overview) now spans the full sidebar width like the other rows.</li>
+<li>New setting, Leave code files alone (on by default): code and settings files (.js, .py, .json, .xml and similar) are not read, grouped or moved. They stay exactly where they are.</li>
+<li>Search by the people, places, things and ideas inside your files. The collection a result belongs to shows above the results.</li>
+<li>Search matches meaning and exact words together, so names, amounts and invoice numbers work. PDFs open on the page that matched.</li>
+<li>Plain-language filters: "pkg files", "pdfs from last week about rent", "screenshots over 5 MB".</li>
+<li>Every file in a collection gets a fit score. Loose fits are marked; clear misfits are left out instead of forced in.</li>
+<li>Collections recognise the kind of paper (CV, certificate, marksheet, ID, offer letter, receipt) and never use a person's name. Choose Broad or Detailed sorting in Settings.</li>
 <li>Choose the size of the writing model in setup and in Settings: Bigger (Recommended) or Light (Quicker). The other size downloads on demand.</li>
 <li>Collections are grouped with the folders they sit in in mind, a folder of generated files stays one collection, and the kind of file decides names where it is clear (Resumes, Payslips, Screenshots).</li>
-<li>A sample folder of invented files ships with Sheaf: try every screen, with a step-by-step guide, while the models download.</li>
-<li>The progress card links each finished step to its screen (Search, Graph, Collections) as reading carries on.</li>
-<li>Highlight one kind of file in Collections and the Graph; quick panel from any app; Overview with people, places, things and ideas.</li>
-<li>Report a Problem: a GitHub issue filled in for you to read and send, with paths blanked out.</li>
-<li>Collection edits are kept in History and can be undone with Command-Z after the note has gone.</li>
+<li>Try every screen on a folder of invented sample files, with a step-by-step guide, while the models download.</li>
+<li>As reading goes on, finished steps link straight to Search, the Graph and Collections.</li>
+<li>Highlight one kind of file in Collections and the Graph; a quick panel you can open from any app.</li>
+<li>Report a Problem fills in a GitHub issue for you to read and send. Paths are blanked out; there is no telemetry.</li>
+<li>Collection edits stay in History and can be undone.</li>
+<li>Smaller, faster default models (about 1.6 GB in total), and Sheaf installs Ollama for you if needed.</li>
+<li>On first launch Sheaf copies a library made by an earlier version into its own folder and leaves the old one untouched.</li>
 </ul>
-<h3>Changed</h3>
+<h2>0.1.0 (first public build)</h2>
 <ul>
-<li>Default models for search and naming, about 1.6 GB in total.</li>
-<li>Search: 39 of 41 test questions answer first time (was 38), all in the top three.</li>
-<li>Grouping F1 on the 64-file test folder: 0.72 with Broad collections (the default) and 0.85 with Detailed (was 0.65).</li>
-<li>Organise scrolls smoothly with hundreds of planned moves.</li>
-<li>New name: Sheaf. The app, command-line tool (<code>sheaf-cli</code>), bundle identifier, website and documentation all use the new name.</li>
-<li>On first launch Sheaf copies a library made by an earlier version (in Application Support) into its own folder and leaves the old one untouched.</li>
-<li>Environment variables now begin <code>SHEAF_</code>.</li>
+<li>Pick a folder; Sheaf reads it without changing anything.</li>
+<li>Understands text, PDFs, Word documents and text inside images, using small models on your Mac.</li>
+<li>Finds collections of related files and explains why they belong together.</li>
+<li>Search by meaning ("when does my flight leave").</li>
+<li>A graph of your collections and how they connect.</li>
+<li>Organise: a proposed folder structure and clearer file names. Every move is approved by you and can be undone.</li>
 </ul>
-<h2>[0.1.0] - unreleased</h2>
-<p>First development milestone. Built and tested on Apple Silicon, macOS 26.</p>
-<h3>Added</h3>
-<ul>
-<li>Folder selection, read-only incremental scanning, SQLite store, file browser.</li>
-<li>Local understanding with Ollama: embeddings, structured summaries, document types, topics and entities; on-device named-entity recognition and OCR.</li>
-<li>Natural-language search over passages, with the reason for each match.</li>
-<li>Relationship discovery with a library-calibrated similarity threshold and shared-name links; explanations for every relationship.</li>
-<li>Content-derived groups named by the local model; interactive graph view.</li>
-<li>Organisation proposals with per-move approval and optional clearer file names.</li>
-<li>Journaled, validated, undoable file moves; automatic rollback on failure; recovery after an interrupted run.</li>
-<li>Command-line twin (<code>sheaf-cli</code>), DMG packaging script, optional Sparkle updates.</li>
-</ul>
-<h3>Known limitations</h3>
-<ul>
-<li>Releases are ad-hoc signed and not notarised.</li>
-<li>Folder structures are one level deep.</li>
-<li>Tested on small libraries (tens of files). Large libraries (thousands of files) are untested.</li>
-</ul>
+<p>Known limitations: unsigned and not notarised; tested on libraries of tens to a few hundred files; Apple Silicon only.</p>
 </div>
 <footer><div class="wrap">
   <a href="docs.html">Docs</a><a href="faq.html">FAQ</a><a href="privacy.html">Privacy</a><a href="changelog.html">Changelog</a><a href="roadmap.html">Roadmap</a><a href="https://github.com/NegiAkash890/sheaf">GitHub</a><a href="https://github.com/NegiAkash890/sheaf/issues">Report an issue</a>
